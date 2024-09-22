@@ -1,0 +1,76 @@
+{
+  "name": "ishigami-hills",
+  "image": "debian:12.7",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "runArgs": [
+    "--env-file",
+    ".devcontainer/devcontainer.env",
+    "--name",
+    "ih-nuxt",
+    "--rm"
+  ],
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "biomejs.biome",
+        "tamasfe.even-better-toml",
+        "kennylong.kubernetes-yaml-formatter",
+        "DavidAnson.vscode-markdownlint",
+        "dotenv.dotenv-vscode",
+        "Vue.volar",
+        "Nuxtr.nuxtr-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.renderWhitespace": "all",
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "[dockerfile]": {
+          "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[toml]": {
+          "editor.defaultFormatter": "tamasfe.even-better-toml"
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "kennylong.kubernetes-yaml-formatter"
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+          "files.trimTrailingWhitespace": false
+        },
+        "files.associations": {
+          ".env*": "dotenv"
+        },
+        "editor.tokenColorCustomizations": {
+          "textMateRules": [
+            {
+              "scope": "keyword.other.dotenv",
+              "settings": {
+                "foreground": "#FF000000"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "postStartCommand": "bash .devcontainer/post_start_command.sh"
+}
