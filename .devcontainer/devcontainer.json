@@ -56,6 +56,12 @@
           "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
           "files.trimTrailingWhitespace": false
         },
+        "[javascript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
         "files.associations": {
           ".env*": "dotenv"
         },
