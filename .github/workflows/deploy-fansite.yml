@@ -4,6 +4,18 @@ on:
   push:
     branches:
     - work
+    paths:
+    - .github/workflows/deploy-fansite.yml
+    - assets/**
+    - public/**
+    - server/**
+    - app.vue
+    - biome.json
+    - nuxt.config.ts
+    - package.json
+    - package-lock.json
+    - tailwind.config.js
+    - tsconfig.json
 
 jobs:
   # Build job
