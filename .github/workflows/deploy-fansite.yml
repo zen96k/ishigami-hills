@@ -6,25 +6,21 @@ on:
     - work
 
 jobs:
-  # Source job
-  source:
-    runs-on: ubuntu-24.04
-    steps:
-    - name: Checkout Fansite
-      uses: actions/checkout@v4
   # Build job
   build:
     runs-on: ubuntu-24.04
     needs: source
     steps:
-    - name: Enable Corepack
-      run: corepack enable
+    - name: Checkout Fansite
+      uses: actions/checkout@v4
+    # - name: Enable Corepack
+    #   run: corepack enable
     - name: Setup Node.js
       uses: actions/setup-node@v4
     - name: Install Packages
       run: npm install
     - name: Build Fansite
-      run: NUXT_APP_BASE_URL=/ishigami-hills/ npm run generate --preset github_pages
+      run: NUXT_APP_BASE_URL=https://zen96k.github.io/ishigami-hills npm run generate --preset github_pages
     - name: Upload Artifact
       uses: actions/upload-pages-artifact@v3
       with:
