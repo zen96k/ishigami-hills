@@ -4,9 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   spaLoadingTemplate: true,
-  // app: {
-  //   head: { link: [{ rel: "icon", href: "/favicon.ico" }] }
-  // },
+  app: {
+    head: {
+      link: [{ rel: "icon", href: "/ishigami-hills" + "/favicon.ico" }]
+    }
+  },
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
