@@ -28,7 +28,8 @@
         "DavidAnson.vscode-markdownlint",
         "dotenv.dotenv-vscode",
         "Vue.volar",
-        "Nuxtr.nuxtr-vscode"
+        "Nuxtr.nuxtr-vscode",
+        "bradlc.vscode-tailwindcss"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -63,7 +64,14 @@
           "editor.defaultFormatter": "biomejs.biome"
         },
         "files.associations": {
-          ".env*": "dotenv"
+          ".env*": "dotenv",
+          "*.page-template": "vue",
+          "*.layout-template": "vue",
+          "*.vue": "vue",
+          "*.css": "tailwindcss"
+        },
+        "editor.quickSuggestions": {
+          "strings": "on"
         },
         "editor.tokenColorCustomizations": {
           "textMateRules": [
