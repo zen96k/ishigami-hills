@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-24.04
     needs: source
     steps:
-    # - name: Enable Corepack
-    #   run: corepack enable
+    - name: Enable Corepack
+      run: corepack enable
     - name: Setup Node.js
       uses: actions/setup-node@v4
     - name: Install Packages
