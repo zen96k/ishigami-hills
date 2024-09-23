@@ -31,7 +31,7 @@ jobs:
     - name: Install Packages
       run: npm install
     - name: Build Fansite
-      run: NUXT_APP_BASE_URL=/ishigami-hills npm run generate --preset github_pages
+      run: npm run generate --preset github_pages
     - name: Upload Artifact
       uses: actions/upload-pages-artifact@v3
       with:
