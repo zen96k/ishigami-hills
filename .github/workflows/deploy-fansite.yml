@@ -48,7 +48,7 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: github_pages
+      name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
     - name: Deploy Fansite
