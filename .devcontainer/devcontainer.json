@@ -64,6 +64,9 @@
         "[typescript]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
+        "[vue]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
         "files.associations": {
           ".env*": "dotenv",
           "*.page-template": "vue",

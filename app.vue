@@ -14,7 +14,9 @@
 <script setup lang="ts">
   useHead({
     titleTemplate: (pageTitle) => {
-      return pageTitle === undefined ? "石上ヒルズ" : `石上ヒルズ - ${pageTitle}`
+      return pageTitle === undefined
+        ? "石上ヒルズ"
+        : `石上ヒルズ - ${pageTitle}`
     }
   })
 </script>
