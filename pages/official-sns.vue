@@ -2,8 +2,9 @@
   <div>
     <a
       class="twitter-timeline"
+      data-theme="dark"
+      data-chrome="noborders"
       href="https://twitter.com/zen96k/lists/1847740575807914084?ref_src=twsrc%5Etfw"
-      data-chrome="nofooter noborders"
       >A Twitter List by zen96k</a
     >
   </div>
