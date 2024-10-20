@@ -1,18 +1,11 @@
 <template>
   <div>
-    <a
-      class="twitter-timeline"
-      data-theme="dark"
-      data-chrome="noborders"
-      href="https://twitter.com/zen96k/lists/1847740575807914084?ref_src=twsrc%5Etfw"
-      >A Twitter List by zen96k</a
-    >
+    <div class="mx-3 my-3 grid grid-cols-1 gap-3 lg:grid-cols-2">
+      <TwitterOfficialFeed />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  useHead({
-    title: "公式SNS",
-    script: [{ src: "https://platform.twitter.com/widgets.js", async: true }]
-  })
+  useHead({ title: "公式SNS" })
 </script>
