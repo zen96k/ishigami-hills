@@ -10,7 +10,7 @@
       </div>
       <div
         v-if="status === 'success'"
-        class="max-h-96 min-w-full overflow-x-auto bg-neutral"
+        class="overflow-x-auto bg-neutral"
       >
         <table class="table table-zebra table-pin-rows">
           <thead>
@@ -59,7 +59,7 @@
           />
         </div>
       </div>
-      <div v-if="status === 'pending'">
+      <div v-else-if="status === 'pending'">
         <span class="loading loading-spinner mx-2 my-2"></span>
       </div>
       <div class="card-body"></div>
