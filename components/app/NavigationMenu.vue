@@ -42,7 +42,7 @@
               class="flex"
             >
               <img
-                src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/662b240f55950e4333f8873b_061.png"
+                src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
                 alt="苦手なコードが使われてない曲ばかり練習する女の子のイラスト"
                 class="h-12 w-12"
               />
