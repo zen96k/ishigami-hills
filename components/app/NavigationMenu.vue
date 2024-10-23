@@ -38,7 +38,7 @@
           <!-- アプリケーション(アイコン/タイトル) -->
           <div class="navbar-center">
             <NuxtLink
-              to="/official-sns"
+              to="/official-feed"
               class="flex"
             >
               <img
@@ -85,12 +85,12 @@
         >
           <li>
             <NuxtLink
-              id="/official-sns"
-              to="/official-sns"
+              id="/official-feed"
+              to="/official-feed"
               class="font-semibold"
             >
               <i class="bi bi-bar-chart-fill"></i>
-              公式SNS
+              公式フィード
             </NuxtLink>
           </li>
         </ul>
@@ -102,7 +102,7 @@
 <script setup lang="ts">
   const requestURL = useRequestURL()
 
-  const menuIDs = ["/official-sns"]
+  const menuIDs = ["/official-feed"]
 
   const toggleMenuActiveStateByRequestURL = () => {
     for (const id of menuIDs) {

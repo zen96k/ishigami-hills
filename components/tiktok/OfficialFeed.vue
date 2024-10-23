@@ -2,7 +2,10 @@
   <div>
     <div class="card glass card-compact bg-teal-950">
       <div class="card-body">
-        <h2 class="card-title">Tiktok</h2>
+        <h2 class="card-title">
+          <span>Tiktok</span>
+        </h2>
+        <p>Tiktokの埋め込みコードを使用。</p>
       </div>
       <blockquote
         class="tiktok-embed"

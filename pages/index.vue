@@ -7,7 +7,7 @@
 
   onMounted(() => {
     setTimeout(() => {
-      return navigateTo("/official-sns")
+      return navigateTo("/official-feed")
     }, 1000)
   })
 </script>
