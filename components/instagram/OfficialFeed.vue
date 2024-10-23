@@ -4,7 +4,7 @@
       <div class="card-body">
         <h2 class="card-title">
           <span>Instagram</span>
-          <span class="badge badge-primary">未実装</span>
+          <span class="badge badge-warning">未実装</span>
         </h2>
         <p>Instagram APIを呼び出すしかない。</p>
       </div>

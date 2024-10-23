@@ -4,7 +4,7 @@
       <div class="card-body">
         <h2 class="card-title">
           <span>X(旧Twitter)</span>
-          <span class="badge badge-primary">未実装</span>
+          <span class="badge badge-warning">未実装</span>
         </h2>
         <p>Twitter Publishが機能しておらず、ポストを取得できない。</p>
         <p>Twitter APIを呼び出すしかない。</p>

@@ -3,11 +3,11 @@
 </template>
 
 <script setup lang="ts">
-  definePageMeta({ layout: "center" })
+  useHead({ title: "レーダー" })
 
   onMounted(() => {
     setTimeout(() => {
-      return navigateTo("/radar")
+      return navigateTo("/radar/official-site")
     }, 1000)
   })
 </script>
