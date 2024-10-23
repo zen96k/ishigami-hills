@@ -5,7 +5,7 @@
         <h2 class="card-title">
           <span>Tiktok</span>
         </h2>
-        <p>Tiktokの埋め込みコードを使用。</p>
+        <span>Tiktokの埋め込みコードを使用。</span>
       </div>
       <blockquote
         class="tiktok-embed"
