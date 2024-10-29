@@ -6,7 +6,7 @@
           <span>一般情報</span>
           <!-- <span class="badge badge-warning">未実装</span> -->
         </h2>
-        <span>公式のRSSフィード。</span>
+        <span>公式サイトの一般情報。</span>
       </div>
       <div
         v-if="status === 'success'"
