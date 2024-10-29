@@ -53,14 +53,16 @@
           >
             <div class="text-sm text-error">一般情報の取得に失敗しました。</div>
           </div>
-          <img
+          <!-- <img
             src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf8cf76ad01581f92afa_056-min.png"
             alt="手の届かない位置で充電ケーブルが抜けてもどかしい女の子のイラスト"
-          />
+          /> -->
         </div>
       </div>
       <div v-else-if="status === 'pending'">
-        <span class="loading loading-spinner mx-2 my-2"></span>
+        <div class="mx-2 my-2 text-center">
+          <span class="loading loading-spinner"></span>
+        </div>
       </div>
       <div class="card-body"></div>
     </div>
