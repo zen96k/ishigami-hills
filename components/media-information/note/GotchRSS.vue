@@ -51,7 +51,9 @@
             role="alert"
             class="alert border-2 border-error text-left"
           >
-            <div class="text-sm text-error">一般情報の取得に失敗しました。</div>
+            <div class="text-sm text-error">
+              ゴッチのNoteの取得に失敗しました。
+            </div>
           </div>
           <!-- <img
             src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf8cf76ad01581f92afa_056-min.png"
