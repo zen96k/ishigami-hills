@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="card glass card-compact bg-teal-950">
+    <div class="card glass card-compact max-h-[500px] bg-teal-950">
       <div class="card-body">
         <h2 class="card-title">
-          <span>凍った脳みそ リターンズ</span>
+          <span>APPLE VINEGAR -Music Support-</span>
           <!-- <span class="badge badge-warning">未実装</span> -->
         </h2>
-        <span>ゴッチのエッセイ。</span>
+        <span>Apple Vinegar Music SupportのNote。</span>
       </div>
       <div
         v-if="status === 'success'"
@@ -52,7 +52,7 @@
             class="alert border-2 border-error text-left"
           >
             <div class="text-sm text-error">
-              ゴッチのエッセイの取得に失敗しました。
+              Apple Vinegar Music SupportのNoteの取得に失敗しました。
             </div>
           </div>
           <!-- <img
@@ -72,8 +72,11 @@
 </template>
 
 <script setup lang="ts">
+  const apiEndpointUrl = "https://api.rss2json.com/v1/api.json"
+  const rssUrl = "https://note.com/avms/rss"
+
   const { data, error, status } = await useLazyFetch(
-    "https://www.mishimaga.com/books/coldbrainreturns/006286.html"
+    `${apiEndpointUrl}?rss_url=${encodeURIComponent(rssUrl)}`
   )
 
   watch(data, () => {

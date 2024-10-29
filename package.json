@@ -23,7 +23,6 @@
     "autoprefixer": "10.4.20",
     "daisyui": "4.12.10",
     "eslint-config-prettier": "9.1.0",
-    "node-html-parser": "6.1.13",
     "postcss": "8.4.47",
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.1.0",
