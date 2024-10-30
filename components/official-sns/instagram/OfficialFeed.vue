@@ -6,7 +6,7 @@
           <span>Instagram</span>
           <span class="badge badge-warning">未実装</span>
         </h2>
-        <span>Instagram APIを呼び出すしかない。</span>
+        <span>Instagramのフィード。</span>
       </div>
       <div class="card-body"></div>
     </div>

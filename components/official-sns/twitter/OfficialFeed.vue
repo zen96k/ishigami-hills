@@ -6,8 +6,7 @@
           <span>X(旧Twitter)</span>
           <span class="badge badge-warning">未実装</span>
         </h2>
-        <span>Twitter Publishが機能しておらず、ポストを取得できない。</span>
-        <span>Twitter APIを呼び出すしかない。</span>
+        <span>Twitterのタイムライン。</span>
       </div>
       <a
         class="twitter-timeline"
