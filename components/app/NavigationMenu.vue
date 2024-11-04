@@ -38,11 +38,11 @@
           <!-- アプリケーション(アイコン/タイトル) -->
           <div class="navbar-center">
             <NuxtLink
-              to="/official-sns"
+              to="/"
               class="flex"
             >
               <img
-                src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/662b240f55950e4333f8873b_061.png"
+                src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
                 alt="苦手なコードが使われてない曲ばかり練習する女の子のイラスト"
                 class="h-12 w-12"
               />
@@ -79,19 +79,53 @@
           aria-label="close sidebar"
           class="drawer-overlay"
         ></label>
-        <ul
-          class="menu min-h-screen w-80 bg-gray-700 p-4"
-          @click="toggleMenuActiveStateOnClick"
-        >
+        <ul class="menu min-h-screen w-80 bg-gray-700 p-4">
           <li>
-            <NuxtLink
-              id="/official-sns"
-              to="/official-sns"
-              class="font-semibold"
-            >
-              <i class="bi bi-bar-chart-fill"></i>
-              公式SNS
-            </NuxtLink>
+            <details open>
+              <summary>レーダー</summary>
+              <ul>
+                <li>
+                  <NuxtLink
+                    id="/radar/official-site"
+                    to="/radar/official-site"
+                  >
+                    <span>公式サイト</span>
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    id="/radar/official-sns"
+                    to="/radar/official-sns"
+                  >
+                    <span>公式SNS</span>
+                    <span class="badge badge-warning">未実装</span>
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    id="/radar/media-information"
+                    to="/radar/media-information"
+                  >
+                    <span>メディア情報</span>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details open>
+              <summary>実験的な機能</summary>
+              <ul>
+                <li>
+                  <NuxtLink
+                    id="/radar/osampo-map"
+                    to="/radar/osampo-map"
+                  >
+                    <span>お散歩マップ</span>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </details>
           </li>
         </ul>
       </div>
@@ -100,15 +134,20 @@
 </template>
 
 <script setup lang="ts">
-  const requestURL = useRequestURL()
+  const route = useRoute()
 
-  const menuIDs = ["/official-sns"]
+  const menuIDs = [
+    "/radar/official-site",
+    "/radar/official-sns",
+    "/radar/media-information",
+    "/radar/osampo-map"
+  ]
 
-  const toggleMenuActiveStateByRequestURL = () => {
+  const toggleMenuActiveState = () => {
     for (const id of menuIDs) {
       const menuElement = document.getElementById(id)
       if (menuElement !== null) {
-        if (requestURL.pathname.includes(id)) {
+        if (route.path.includes(id)) {
           menuElement.classList.add("active")
         } else {
           menuElement.classList.remove("active")
@@ -117,22 +156,11 @@
     }
   }
 
-  const toggleMenuActiveStateOnClick = (event: Event) => {
-    for (const id of menuIDs) {
-      const menuElement = document.getElementById(id)
-      if (menuElement !== null) {
-        if (event.target instanceof HTMLElement) {
-          if (event.target.id === id) {
-            menuElement.classList.add("active")
-          } else {
-            menuElement.classList.remove("active")
-          }
-        }
-      }
-    }
-  }
+  watch(route, () => {
+    toggleMenuActiveState()
+  })
 
   onMounted(() => {
-    toggleMenuActiveStateByRequestURL()
+    toggleMenuActiveState()
   })
 </script>

@@ -1,75 +1,12 @@
-# Nuxt 3 Minimal Starter
+# Ishigami-Hills
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+アジカンの非公式ファンサイト。  
+<https://ishigami-hills.zen96k.mydns.jp>
 
-## Setup
+## Commit Prefix
 
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+* add: ファイルを追加する
+* remove: ファイルを削除する
+* refactor: ファイルを更新/移動する
+* revert: ファイルを過去の状態に戻す
+* chore: テストやドキュメント、パッケージ等を追加/削除/更新/移動する
