@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "レーダー - 公式SNS" })
+  useHead({ title: "公式SNS" })
 </script>

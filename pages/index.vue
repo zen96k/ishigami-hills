@@ -3,8 +3,6 @@
 </template>
 
 <script setup lang="ts">
-  definePageMeta({ layout: "center" })
-
   onMounted(() => {
     setTimeout(() => {
       return navigateTo("/radar")

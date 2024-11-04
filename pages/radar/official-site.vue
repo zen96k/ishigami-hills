@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "レーダー - 公式サイト" })
+  useHead({ title: "公式サイト" })
 </script>

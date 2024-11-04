@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "レーダー - メディア情報" })
+  useHead({ title: "メディア情報" })
 </script>

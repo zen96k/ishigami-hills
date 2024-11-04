@@ -112,6 +112,21 @@
               </ul>
             </details>
           </li>
+          <li>
+            <details open>
+              <summary>実験的な機能</summary>
+              <ul>
+                <li>
+                  <NuxtLink
+                    id="/radar/osampo-map"
+                    to="/radar/osampo-map"
+                  >
+                    <span>お散歩マップ</span>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </details>
+          </li>
         </ul>
       </div>
     </div>
@@ -124,7 +139,8 @@
   const menuIDs = [
     "/radar/official-site",
     "/radar/official-sns",
-    "/radar/media-information"
+    "/radar/media-information",
+    "/radar/osampo-map"
   ]
 
   const toggleMenuActiveState = () => {
