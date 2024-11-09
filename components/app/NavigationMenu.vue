@@ -118,8 +118,8 @@
               <ul>
                 <li>
                   <NuxtLink
-                    id="/radar/osampo-map"
-                    to="/radar/osampo-map"
+                    id="/experiment/stroll-map"
+                    to="/experiment/stroll-map"
                   >
                     <span>お散歩マップ</span>
                   </NuxtLink>
@@ -140,7 +140,7 @@
     "/radar/official-site",
     "/radar/official-sns",
     "/radar/media-information",
-    "/radar/osampo-map"
+    "/experiment/stroll-map"
   ]
 
   const toggleMenuActiveState = () => {
