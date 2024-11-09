@@ -27,7 +27,6 @@
         "tamasfe.even-better-toml",
         "kennylong.kubernetes-yaml-formatter",
         "DavidAnson.vscode-markdownlint",
-        "dotenv.dotenv-vscode",
         "Vue.volar",
         "Nuxtr.nuxtr-vscode",
         "bradlc.vscode-tailwindcss"
@@ -68,7 +67,6 @@
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "files.associations": {
-          ".env*": "dotenv",
           "*.page-template": "vue",
           "*.layout-template": "vue",
           "*.vue": "vue",
@@ -76,16 +74,6 @@
         },
         "editor.quickSuggestions": {
           "strings": "on"
-        },
-        "editor.tokenColorCustomizations": {
-          "textMateRules": [
-            {
-              "scope": "keyword.other.dotenv",
-              "settings": {
-                "foreground": "#FF000000"
-              }
-            }
-          ]
         }
       }
     }

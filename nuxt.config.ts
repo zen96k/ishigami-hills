@@ -4,11 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   spaLoadingTemplate: true,
-  app: {
-    head: {
-      link: [{ rel: "icon", href: "/favicon.png" }]
-    }
-  },
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
@@ -16,5 +11,10 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  modules: ["@nuxt/eslint"]
+  modules: ["@nuxt/eslint"],
+  runtimeConfig: {
+    public: {
+      googleMapApiKey: ""
+    }
+  }
 })
