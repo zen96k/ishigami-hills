@@ -17,6 +17,7 @@
       return pageTitle === undefined
         ? "石上ヒルズ"
         : `石上ヒルズ - ${pageTitle}`
-    }
+    },
+    link: [{ rel: "icon", href: "/favicon.png" }]
   })
 </script>
