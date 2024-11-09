@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/eslint"],
   runtimeConfig: {
     public: {
-      googleMapApiKey: process.env["NUXT_PUBLIC_GOOGLE_MAP_API_KEY"] ?? ""
+      googleMapApiKey: ""
     }
   }
 })
