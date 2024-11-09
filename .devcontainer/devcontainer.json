@@ -67,9 +67,6 @@
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "files.associations": {
-          "*.page-template": "vue",
-          "*.layout-template": "vue",
-          "*.vue": "vue",
           "*.css": "tailwindcss"
         },
         "editor.quickSuggestions": {
