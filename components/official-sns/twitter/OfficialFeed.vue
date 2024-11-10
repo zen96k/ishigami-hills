@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card glass card-compact bg-teal-950">
+    <div class="card glass card-compact bg-red-950">
       <div class="card-body">
         <h2 class="card-title">
           <span>X(旧Twitter)</span>

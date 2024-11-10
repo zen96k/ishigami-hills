@@ -10,7 +10,7 @@
       <!-- レイアウト -->
       <div class="drawer-content flex flex-col">
         <!-- ナビゲーションメニュー -->
-        <div class="navbar w-full bg-teal-700">
+        <div class="navbar w-full bg-red-950">
           <!-- メニューボタン -->
           <div class="navbar-start">
             <div class="flex-none lg:hidden">
@@ -57,7 +57,7 @@
           <slot />
         </div>
         <!-- フッター -->
-        <footer class="footer footer-center bg-teal-700 p-1">
+        <footer class="footer footer-center bg-red-950 p-1">
           <aside>
             <div class="font-semibold">Developed by: Kotaro Kuroda</div>
             <div class="font-semibold">
@@ -79,7 +79,7 @@
           aria-label="close sidebar"
           class="drawer-overlay"
         />
-        <ul class="menu min-h-screen w-80 bg-gray-700 p-4">
+        <ul class="menu min-h-screen w-80 bg-gray-800 p-4">
           <li>
             <details open>
               <summary>レーダー</summary>

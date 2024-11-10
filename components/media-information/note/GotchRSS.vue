@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card glass card-compact max-h-[500px] bg-teal-950">
+    <div class="card glass card-compact max-h-[500px] bg-red-950">
       <div class="card-body">
         <h2 class="card-title">
           <span>Masafumi Gotoh</span>
