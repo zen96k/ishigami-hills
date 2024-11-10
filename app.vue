@@ -14,10 +14,17 @@
 <script setup lang="ts">
   useHead({
     titleTemplate: (title) => {
-      return title === undefined ? "石上ヒルズ" : `石上ヒルズ - ${title}`
+      const route = useRoute()
+      const appName = "石上ヒルズ"
+      if (route.path === "/") {
+        return appName
+      } else {
+        return title === undefined ? appName : `${appName} - ${title}`
+      }
     }
   })
   useSeoMeta({
+    title: "石上ヒルズ",
     ogTitle: "石上ヒルズ",
     description: "アジカンの非公式ファンサイト。",
     ogDescription: "アジカンの非公式ファンサイト。",
