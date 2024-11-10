@@ -15,10 +15,11 @@
     lat: 35.32342341173676,
     lng: 139.6254324509497
   }
-  const mapOptions = {
+  const mapOptions: google.maps.MapOptions = {
     center: initialPosition,
     zoom: 17,
-    mapId: "67c4afba5d5d2642"
+    mapId: "67c4afba5d5d2642",
+    mapTypeControl: false
   }
 
   const displayMarkerElementContent = ref(false)
