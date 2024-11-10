@@ -39,14 +39,17 @@
           <div class="navbar-center">
             <NuxtLink
               to="/"
-              class="flex"
+              class="flex items-center"
             >
               <img
                 src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
                 alt="苦手なコードが使われてない曲ばかり練習する女の子のイラスト"
-                class="h-12 w-12"
+                class="h-14 w-14"
               />
-              <div class="self-center text-2xl font-semibold">石上ヒルズ</div>
+              <div class="flex flex-col items-center">
+                <span class="text-2xl font-semibold">石上ヒルズ</span>
+                <span class="">アジカンの非公式ファンサイト。</span>
+              </div>
             </NuxtLink>
           </div>
           <!-- アカウントアイコン -->
