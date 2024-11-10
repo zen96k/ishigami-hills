@@ -3,6 +3,7 @@
     <div
       id="map"
       class="min-h-screen min-w-full"
+      :displayMarkerElementContent="displayMarkerElementContent"
     />
   </div>
 </template>
@@ -16,8 +17,56 @@
   }
   const mapOptions = {
     center: initialPosition,
-    zoom: 15,
+    zoom: 17,
     mapId: "67c4afba5d5d2642"
+  }
+
+  const displayMarkerElementContent = ref(false)
+
+  const toggleInitialMarkerElementContent = (
+    advancedMarkerElement: google.maps.marker.AdvancedMarkerElement
+  ) => {
+    if (!displayMarkerElementContent.value) {
+      advancedMarkerElement.content = buildInitialMarkerElementContent()
+    } else {
+      advancedMarkerElement.content = null
+    }
+    displayMarkerElementContent.value = !displayMarkerElementContent.value
+  }
+
+  const buildInitialMarkerElementContent = () => {
+    const divElement = document.createElement("div")
+    divElement.innerHTML = `
+    <div class="card bg-base-100 max-w-96">
+      <div class="card-body">
+        <div class="card-actions justify-end">
+          <button class="btn btn-square btn-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <h2 class="card-title">関東学院大学</h2>
+        <span>
+          ASIAN KUNG-FU GENERATIONが結成された場所。
+        </span>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary btn-sm">Google Map</button>
+        </div>
+      </div>
+    </div>
+    `
+
+    return divElement
   }
 
   onMounted(async () => {
@@ -28,9 +77,15 @@
       document.getElementById("map") as HTMLElement,
       mapOptions
     )
-    const advancedMarkerElement = new AdvancedMarkerElement({
-      map,
-      position: initialPosition
+
+    const initialMarkerElement = new AdvancedMarkerElement({
+      map: map,
+      position: initialPosition,
+      title: "関東学院大学"
+    })
+
+    initialMarkerElement.addListener("click", () => {
+      toggleInitialMarkerElementContent(initialMarkerElement)
     })
   })
 </script>
