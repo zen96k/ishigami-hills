@@ -22,7 +22,7 @@
           >
         </section>
       </blockquote>
-      <div class="card-body"></div>
+      <div class="card-body" />
     </div>
   </div>
 </template>

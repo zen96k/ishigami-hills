@@ -3,7 +3,7 @@
     <div
       id="map"
       class="min-h-screen min-w-full"
-    ></div>
+    />
   </div>
 </template>
 

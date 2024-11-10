@@ -8,7 +8,7 @@
         </h2>
         <span>Instagramのフィード。</span>
       </div>
-      <div class="card-body"></div>
+      <div class="card-body" />
     </div>
   </div>
 </template>

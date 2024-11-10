@@ -15,7 +15,7 @@
         href="https://twitter.com/zen96k/lists/1847740575807914084?ref_src=twsrc%5Etfw"
         >A Twitter List by zen96k</a
       >
-      <div class="card-body"></div>
+      <div class="card-body" />
     </div>
   </div>
 </template>

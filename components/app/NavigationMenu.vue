@@ -30,7 +30,7 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
+                  />
                 </svg>
               </label>
             </div>
@@ -50,7 +50,7 @@
             </NuxtLink>
           </div>
           <!-- アカウントアイコン -->
-          <div class="navbar-end"></div>
+          <div class="navbar-end" />
         </div>
         <!-- コンテンツ -->
         <div class="min-h-screen">
@@ -78,7 +78,7 @@
           for="app-navigation-menu"
           aria-label="close sidebar"
           class="drawer-overlay"
-        ></label>
+        />
         <ul class="menu min-h-screen w-80 bg-gray-700 p-4">
           <li>
             <details open>
