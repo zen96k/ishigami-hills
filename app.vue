@@ -13,15 +13,13 @@
 
 <script setup lang="ts">
   useHead({
-    titleTemplate: (pageTitle) => {
-      return pageTitle === undefined
-        ? "石上ヒルズ"
-        : `石上ヒルズ - ${pageTitle}`
+    titleTemplate: (title) => {
+      return title === undefined ? "石上ヒルズ" : `石上ヒルズ - ${title}`
     },
     link: [{ rel: "icon", href: "/favicon.png" }]
   })
   useSeoMeta({
-    title: "石上ヒルズ",
+    title: "ホーム",
     ogTitle: "石上ヒルズ",
     description: "アジカンの非公式ファンサイト。",
     ogDescription: "アジカンの非公式ファンサイト。",
