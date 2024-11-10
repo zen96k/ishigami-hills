@@ -2,7 +2,7 @@
   <div>
     <Html
       lang="ja"
-      data-theme="sunset"
+      data-theme="dark"
     >
       <NuxtLayout>
         <NuxtPage />
