@@ -15,8 +15,7 @@
   useHead({
     titleTemplate: (title) => {
       return title === undefined ? "石上ヒルズ" : `石上ヒルズ - ${title}`
-    },
-    link: [{ rel: "icon", href: "/favicon.png" }]
+    }
   })
   useSeoMeta({
     ogTitle: "石上ヒルズ",
