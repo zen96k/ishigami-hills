@@ -10,22 +10,27 @@
 <script setup lang="ts">
   const googleMap = useGoogleMap()
 
+  const initialPosition = {
+    lat: 35.32342341173676,
+    lng: 139.6254324509497
+  }
   const mapOptions = {
-    center: {
-      lat: 35.32355122812781,
-      lng: 139.62584205091045
-    },
-    zoom: 15
+    center: initialPosition,
+    zoom: 15,
+    mapId: "67c4afba5d5d2642"
   }
 
-  onMounted(() => {
-    googleMap
-      .importLibrary("maps")
-      .then(({ Map }) => {
-        new Map(document.getElementById("map") as HTMLElement, mapOptions)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+  onMounted(async () => {
+    const { Map } = await googleMap.importLibrary("maps")
+    const { AdvancedMarkerElement } = await googleMap.importLibrary("marker")
+
+    const map = new Map(
+      document.getElementById("map") as HTMLElement,
+      mapOptions
+    )
+    const advancedMarkerElement = new AdvancedMarkerElement({
+      map,
+      position: initialPosition
+    })
   })
 </script>
