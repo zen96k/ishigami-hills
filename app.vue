@@ -19,7 +19,6 @@
     link: [{ rel: "icon", href: "/favicon.png" }]
   })
   useSeoMeta({
-    title: "ホーム",
     ogTitle: "石上ヒルズ",
     description: "アジカンの非公式ファンサイト。",
     ogDescription: "アジカンの非公式ファンサイト。",
