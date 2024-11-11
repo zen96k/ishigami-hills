@@ -2,7 +2,6 @@
   <div>
     <div
       id="map"
-      class="min-h-screen min-w-full"
       :displayMarkerElementContent="displayMarkerElementContent"
     />
   </div>
@@ -71,6 +70,20 @@
   }
 
   onMounted(async () => {
+    const appHeaderElement = document.getElementById(
+      "app-header"
+    ) as HTMLDivElement
+    const appFooterElement = document.getElementById(
+      "app-footer"
+    ) as HTMLDivElement
+    const mapElement = document.getElementById("map") as HTMLDivElement
+
+    mapElement.style.height =
+      window.innerHeight -
+      appHeaderElement.offsetHeight -
+      appFooterElement.offsetHeight +
+      "px"
+
     const { Map } = await googleMap.importLibrary("maps")
     const { AdvancedMarkerElement } = await googleMap.importLibrary("marker")
 

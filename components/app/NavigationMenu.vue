@@ -10,7 +10,10 @@
       <!-- レイアウト -->
       <div class="drawer-content flex flex-col">
         <!-- ナビゲーションメニュー -->
-        <div class="navbar w-full bg-red-950">
+        <div
+          id="app-header"
+          class="navbar w-full bg-red-950"
+        >
           <!-- メニューボタン -->
           <div class="navbar-start">
             <div class="flex-none lg:hidden">
@@ -56,11 +59,14 @@
           <div class="navbar-end" />
         </div>
         <!-- コンテンツ -->
-        <div class="min-h-screen">
+        <div id="app-contents">
           <slot />
         </div>
         <!-- フッター -->
-        <footer class="footer footer-center bg-red-950 p-1">
+        <footer
+          id="app-footer"
+          class="footer footer-center bg-red-950 p-1"
+        >
           <aside>
             <div class="font-semibold">Developed by: Kotaro Kuroda</div>
             <div class="font-semibold">
@@ -76,7 +82,10 @@
           </aside>
         </footer>
       </div>
-      <div class="drawer-side">
+      <div
+        id="app-drawer"
+        class="drawer-side"
+      >
         <label
           for="app-navigation-menu"
           aria-label="close sidebar"
@@ -165,5 +174,21 @@
 
   onMounted(() => {
     toggleMenuActiveState()
+
+    const appHeaderElement = document.getElementById(
+      "app-header"
+    ) as HTMLDivElement
+    const appFooterElement = document.getElementById(
+      "app-footer"
+    ) as HTMLDivElement
+    const appContentsElement = document.getElementById(
+      "app-contents"
+    ) as HTMLDivElement
+
+    appContentsElement.style.minHeight =
+      window.innerHeight -
+      appHeaderElement.offsetHeight -
+      appFooterElement.offsetHeight +
+      "px"
   })
 </script>
