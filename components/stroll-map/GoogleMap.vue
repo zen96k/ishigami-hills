@@ -40,7 +40,7 @@
     <div class="card bg-base-100 max-w-96">
       <div class="card-body">
         <div class="card-actions justify-end">
-          <button class="btn btn-square btn-sm">
+          <button class="btn btn-square btn-xs bg-red-800">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
@@ -60,7 +60,7 @@
           ASIAN KUNG-FU GENERATIONが結成された場所。
         </span>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary btn-sm">Google Map</button>
+          <button class="btn btn-primary btn-xs">Google Map</button>
         </div>
       </div>
     </div>
