@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card glass card-compact max-h-[500px] bg-teal-950">
+    <div class="card glass card-compact max-h-[500px] bg-red-950">
       <div class="card-body">
         <h2 class="card-title">
           <span>APPLE VINEGAR -Music Support-</span>
@@ -15,7 +15,7 @@
         <table class="table table-zebra table-pin-rows">
           <thead>
             <tr>
-              <th></th>
+              <th />
               <th>Date</th>
               <th>Status</th>
               <th>Title</th>
@@ -63,10 +63,10 @@
       </div>
       <div v-else-if="status === 'pending'">
         <div class="mx-2 my-2 text-center">
-          <span class="loading loading-spinner"></span>
+          <span class="loading loading-spinner" />
         </div>
       </div>
-      <div class="card-body"></div>
+      <div class="card-body" />
     </div>
   </div>
 </template>

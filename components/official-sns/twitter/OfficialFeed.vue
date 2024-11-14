@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card glass card-compact bg-teal-950">
+    <div class="card glass card-compact bg-red-950">
       <div class="card-body">
         <h2 class="card-title">
           <span>X(旧Twitter)</span>
@@ -15,7 +15,7 @@
         href="https://twitter.com/zen96k/lists/1847740575807914084?ref_src=twsrc%5Etfw"
         >A Twitter List by zen96k</a
       >
-      <div class="card-body"></div>
+      <div class="card-body" />
     </div>
   </div>
 </template>

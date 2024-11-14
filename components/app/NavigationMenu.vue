@@ -10,7 +10,10 @@
       <!-- レイアウト -->
       <div class="drawer-content flex flex-col">
         <!-- ナビゲーションメニュー -->
-        <div class="navbar w-full bg-teal-700">
+        <div
+          id="app-header"
+          class="navbar w-full bg-red-950"
+        >
           <!-- メニューボタン -->
           <div class="navbar-start">
             <div class="flex-none lg:hidden">
@@ -30,7 +33,7 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
+                  />
                 </svg>
               </label>
             </div>
@@ -39,25 +42,31 @@
           <div class="navbar-center">
             <NuxtLink
               to="/"
-              class="flex"
+              class="flex items-center"
             >
               <img
                 src="https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
                 alt="苦手なコードが使われてない曲ばかり練習する女の子のイラスト"
-                class="h-12 w-12"
+                class="h-14 w-14"
               />
-              <div class="self-center text-2xl font-semibold">石上ヒルズ</div>
+              <div class="flex flex-col items-center">
+                <span class="text-2xl font-semibold">石上ヒルズ</span>
+                <span class="">アジカンの非公式ファンサイト。</span>
+              </div>
             </NuxtLink>
           </div>
           <!-- アカウントアイコン -->
-          <div class="navbar-end"></div>
+          <div class="navbar-end" />
         </div>
         <!-- コンテンツ -->
-        <div class="min-h-screen">
+        <div id="app-contents">
           <slot />
         </div>
         <!-- フッター -->
-        <footer class="footer footer-center bg-teal-700 p-1">
+        <footer
+          id="app-footer"
+          class="footer footer-center bg-red-950 p-1"
+        >
           <aside>
             <div class="font-semibold">Developed by: Kotaro Kuroda</div>
             <div class="font-semibold">
@@ -73,13 +82,16 @@
           </aside>
         </footer>
       </div>
-      <div class="drawer-side">
+      <div
+        id="app-drawer"
+        class="drawer-side"
+      >
         <label
           for="app-navigation-menu"
           aria-label="close sidebar"
           class="drawer-overlay"
-        ></label>
-        <ul class="menu min-h-screen w-80 bg-gray-700 p-4">
+        />
+        <ul class="menu min-h-screen w-80 bg-gray-800 p-4">
           <li>
             <details open>
               <summary>レーダー</summary>
@@ -162,5 +174,21 @@
 
   onMounted(() => {
     toggleMenuActiveState()
+
+    const appHeaderElement = document.getElementById(
+      "app-header"
+    ) as HTMLDivElement
+    const appFooterElement = document.getElementById(
+      "app-footer"
+    ) as HTMLDivElement
+    const appContentsElement = document.getElementById(
+      "app-contents"
+    ) as HTMLDivElement
+
+    appContentsElement.style.minHeight =
+      window.innerHeight -
+      appHeaderElement.offsetHeight -
+      appFooterElement.offsetHeight +
+      "px"
   })
 </script>
