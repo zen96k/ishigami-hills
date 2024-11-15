@@ -20,8 +20,13 @@ export default defineNuxtConfig({
           content: "アジカンの非公式ファンサイト。"
         },
         {
+          property: "og:site_name",
+          content: "石上ヒルズ"
+        },
+        {
           property: "og:image",
-          content: "https://nuxt.com/assets/design-kit/logo-green-white.png"
+          content:
+            "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
         },
         {
           name: "twitter:title",
@@ -33,7 +38,8 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "https://nuxt.com/assets/design-kit/logo-green-white.png"
+          content:
+            "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
         },
         {
           name: "twitter:card",
