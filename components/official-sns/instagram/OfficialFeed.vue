@@ -13,8 +13,4 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  useHead({
-    script: [{ src: "https://platform.twitter.com/widgets.js", async: true }]
-  })
-</script>
+<script setup lang="ts"></script>

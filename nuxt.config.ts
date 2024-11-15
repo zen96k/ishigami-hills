@@ -21,12 +21,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:image",
-          content:
-            "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image"
+          content: "https://nuxt.com/assets/design-kit/logo-green-white.png"
         },
         {
           name: "twitter:title",
@@ -38,8 +33,11 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content:
-            "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
+          content: "https://nuxt.com/assets/design-kit/logo-green-white.png"
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
         }
       ]
     }

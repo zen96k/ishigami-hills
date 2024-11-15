@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "メディア情報" })
+  useHeadSafe({ title: "メディア情報" })
 </script>
