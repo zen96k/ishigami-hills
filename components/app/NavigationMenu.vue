@@ -134,6 +134,7 @@
                     to="/experiment/stroll-map"
                   >
                     <span>お散歩マップ</span>
+                    <span class="badge badge-info">実装中</span>
                   </NuxtLink>
                 </li>
               </ul>
