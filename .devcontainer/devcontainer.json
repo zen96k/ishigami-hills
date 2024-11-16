@@ -29,7 +29,8 @@
         "DavidAnson.vscode-markdownlint",
         "Vue.volar",
         "Nuxtr.nuxtr-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "JeffersonLicet.snipped"
       ],
       "settings": {
         "editor.formatOnSave": true,
