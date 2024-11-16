@@ -5,39 +5,20 @@
 </template>
 
 <script setup lang="ts">
-  const googleMap = useGoogleMap()
+  import { Loader } from "@googlemaps/js-api-loader"
 
-  const initialPosition = {
-    lat: 35.32342341173676,
-    lng: 139.6254324509497
-  }
-  const mapOptions: google.maps.MapOptions = {
-    center: initialPosition,
-    zoom: 17,
-    mapId: "67c4afba5d5d2642",
-    mapTypeControl: false
-  }
-
-  const createInfoWindowContent = () => {
-    const divElement = document.createElement("div")
-    divElement.innerHTML = `
-    <div class="card bg-base-100 max-w-96">
-      <div class="card-body">
-        <h2 class="card-title">関東学院大学</h2>
-        <span>
-          ASIAN KUNG-FU GENERATIONが結成された場所。
-        </span>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary btn-xs">Google Map</button>
-        </div>
-      </div>
-    </div>
-    `
-
-    return divElement
-  }
+  const runtimeConfig = useRuntimeConfig()
 
   onMounted(async () => {
+    const loader = new Loader({
+      apiKey: runtimeConfig.public.googleMapApiKey,
+      version: "weekly"
+    })
+
+    const { Place } = await loader.importLibrary("places")
+    const { Map, InfoWindow } = await loader.importLibrary("maps")
+    const { AdvancedMarkerElement } = await loader.importLibrary("marker")
+
     const appHeaderElement = document.getElementById(
       "app-header"
     ) as HTMLElement
@@ -52,22 +33,89 @@
       appFooterElement.offsetHeight +
       "px"
 
-    const { Map } = await googleMap.importLibrary("maps")
+    const place = new Place({
+      id: "ChIJ-Yif-kRBGGAR0WQdmmLo688"
+    })
+    await place.fetchFields({
+      fields: ["location"]
+    })
 
-    const map = new Map(
-      document.getElementById("map") as HTMLElement,
-      mapOptions
-    )
+    const mapOptions: google.maps.MapOptions = {
+      zoom: 17,
+      mapId: "67c4afba5d5d2642",
+      mapTypeControl: false
+    }
 
-    map.addListener("click", (event: google.maps.MapMouseEvent) => {
+    const map = new Map(mapElement, {
+      center: place.location ?? null,
+      ...mapOptions
+    })
+
+    const currentPlaceId = ref("")
+    const currentMarkerElement = ref(new AdvancedMarkerElement())
+    const currentInfoWindow = ref(new InfoWindow())
+
+    map.addListener("click", async (event: google.maps.MapMouseEvent) => {
       if ("placeId" in event) {
         event.stop()
-        console.dir(event)
-        const infoWindow = new google.maps.InfoWindow({
-          content: createInfoWindowContent(),
-          position: event.latLng
-        })
-        infoWindow.open({ map: map })
+
+        if ((event.placeId as string) !== currentPlaceId.value) {
+          currentPlaceId.value = ""
+          currentMarkerElement.value.map = null
+          currentInfoWindow.value.close()
+
+          const place = new Place({
+            id: event.placeId as string
+          })
+          await place.fetchFields({
+            fields: ["displayName", "googleMapsURI", "location"]
+          })
+          currentPlaceId.value = place.id
+
+          const markerElement = new AdvancedMarkerElement({
+            map: map,
+            position: place.location ?? null
+          })
+          currentMarkerElement.value = markerElement
+
+          const contentElement = document.createElement("div")
+          contentElement.innerHTML =
+            /* HTML */
+            `
+              <div class="card max-w-96 bg-base-100">
+                <div class="card-body">
+                  <h2 class="card-title">${place.displayName}</h2>
+                  <span>まだ情報が登録されていません。</span>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-disabled btn-primary btn-xs">
+                      登録
+                    </button>
+                    <a
+                      href="${place.googleMapsURI}"
+                      target="_blank"
+                      class="btn btn-primary btn-xs"
+                    >
+                      Googleマップ
+                    </a>
+                  </div>
+                </div>
+              </div>
+            `
+
+          const infoWindow = new InfoWindow({
+            content: contentElement,
+            position: event.latLng
+          })
+          currentInfoWindow.value = infoWindow
+          infoWindow.open({
+            map: map,
+            anchor: markerElement
+          })
+        }
+      } else {
+        currentPlaceId.value = ""
+        currentMarkerElement.value.map = null
+        currentInfoWindow.value.close()
       }
     })
   })

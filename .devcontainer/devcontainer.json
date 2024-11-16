@@ -27,6 +27,7 @@
         "tamasfe.even-better-toml",
         "kennylong.kubernetes-yaml-formatter",
         "DavidAnson.vscode-markdownlint",
+        "Tobermory.es6-string-html",
         "Vue.volar",
         "Nuxtr.nuxtr-vscode",
         "bradlc.vscode-tailwindcss",
