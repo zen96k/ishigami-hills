@@ -158,13 +158,11 @@
 
   const toggleMenuActiveState = () => {
     for (const id of menuIDs) {
-      const menuElement = document.getElementById(id)
-      if (menuElement !== null) {
-        if (route.path.includes(id)) {
-          menuElement.classList.add("active")
-        } else {
-          menuElement.classList.remove("active")
-        }
+      const menuElement = document.getElementById(id) as HTMLElement
+      if (route.path.includes(id)) {
+        menuElement.classList.add("active")
+      } else {
+        menuElement.classList.remove("active")
       }
     }
   }

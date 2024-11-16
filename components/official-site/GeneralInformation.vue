@@ -45,7 +45,7 @@
           </tbody>
         </table>
       </div>
-      <div v-else-if="error !== undefined && error !== null">
+      <div v-else-if="error !== null">
         <div class="mx-2 my-2 flex flex-col">
           <div
             role="alert"
@@ -83,7 +83,7 @@
   })
 
   watch(error, () => {
-    if (error.value !== undefined && error.value !== null) {
+    if (error.value !== null) {
       console.error("Error:")
       console.error(error.value)
     }
