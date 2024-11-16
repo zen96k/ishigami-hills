@@ -178,13 +178,13 @@
 
     const appHeaderElement = document.getElementById(
       "app-header"
-    ) as HTMLDivElement
+    ) as HTMLElement
     const appFooterElement = document.getElementById(
       "app-footer"
-    ) as HTMLDivElement
+    ) as HTMLElement
     const appContentsElement = document.getElementById(
       "app-contents"
-    ) as HTMLDivElement
+    ) as HTMLElement
 
     appContentsElement.style.minHeight =
       window.innerHeight -
