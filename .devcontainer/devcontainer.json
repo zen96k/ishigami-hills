@@ -1,6 +1,6 @@
 {
   "name": "ishigami-hills",
-  "image": "debian:12.7",
+  "image": "debian",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/node:1": {}
@@ -27,9 +27,11 @@
         "tamasfe.even-better-toml",
         "kennylong.kubernetes-yaml-formatter",
         "DavidAnson.vscode-markdownlint",
+        "Tobermory.es6-string-html",
         "Vue.volar",
         "Nuxtr.nuxtr-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "JeffersonLicet.snipped"
       ],
       "settings": {
         "editor.formatOnSave": true,

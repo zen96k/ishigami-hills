@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "公式SNS" })
+  useHeadSafe({ title: "公式SNS" })
 </script>

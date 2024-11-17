@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "公式サイト" })
+  useHeadSafe({ title: "公式サイト" })
 </script>

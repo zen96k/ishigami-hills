@@ -1,105 +1,117 @@
 <template>
   <div>
-    <div
-      id="map"
-      :displayMarkerElementContent="displayMarkerElementContent"
-    />
+    <div id="map" />
   </div>
 </template>
 
 <script setup lang="ts">
-  const googleMap = useGoogleMap()
+  import { Loader } from "@googlemaps/js-api-loader"
 
-  const initialPosition = {
-    lat: 35.32342341173676,
-    lng: 139.6254324509497
-  }
-  const mapOptions: google.maps.MapOptions = {
-    center: initialPosition,
-    zoom: 17,
-    mapId: "67c4afba5d5d2642",
-    mapTypeControl: false
-  }
+  const runtimeConfig = useRuntimeConfig()
 
-  const displayMarkerElementContent = ref(false)
+  const { height: windowHeight } = useWindowSize()
 
-  const toggleInitialMarkerElementContent = (
-    advancedMarkerElement: google.maps.marker.AdvancedMarkerElement
-  ) => {
-    if (!displayMarkerElementContent.value) {
-      advancedMarkerElement.content = buildInitialMarkerElementContent()
-    } else {
-      advancedMarkerElement.content = null
-    }
-    displayMarkerElementContent.value = !displayMarkerElementContent.value
-  }
-
-  const buildInitialMarkerElementContent = () => {
-    const divElement = document.createElement("div")
-    divElement.innerHTML = `
-    <div class="card bg-base-100 max-w-96">
-      <div class="card-body">
-        <div class="card-actions justify-end">
-          <button class="btn btn-square btn-xs bg-red-800">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <h2 class="card-title">関東学院大学</h2>
-        <span>
-          ASIAN KUNG-FU GENERATIONが結成された場所。
-        </span>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary btn-xs">Google Map</button>
-        </div>
-      </div>
-    </div>
-    `
-
-    return divElement
-  }
+  watch(windowHeight, () => {
+    resizeMapElementHeight()
+  })
 
   onMounted(async () => {
-    const appHeaderElement = document.getElementById(
-      "app-header"
-    ) as HTMLDivElement
-    const appFooterElement = document.getElementById(
-      "app-footer"
-    ) as HTMLDivElement
-    const mapElement = document.getElementById("map") as HTMLDivElement
-
-    mapElement.style.height =
-      window.innerHeight -
-      appHeaderElement.offsetHeight -
-      appFooterElement.offsetHeight +
-      "px"
-
-    const { Map } = await googleMap.importLibrary("maps")
-    const { AdvancedMarkerElement } = await googleMap.importLibrary("marker")
-
-    const map = new Map(
-      document.getElementById("map") as HTMLElement,
-      mapOptions
-    )
-
-    const initialMarkerElement = new AdvancedMarkerElement({
-      map: map,
-      position: initialPosition,
-      title: "関東学院大学"
+    const loader = new Loader({
+      apiKey: runtimeConfig.public.googleMapApiKey,
+      version: "weekly"
     })
 
-    initialMarkerElement.addListener("click", () => {
-      toggleInitialMarkerElementContent(initialMarkerElement)
+    const { Place } = await loader.importLibrary("places")
+    const { Map, InfoWindow } = await loader.importLibrary("maps")
+    const { AdvancedMarkerElement } = await loader.importLibrary("marker")
+
+    const mapElement = document.getElementById("map") as HTMLElement
+
+    resizeMapElementHeight()
+
+    const mapOptions: google.maps.MapOptions = {
+      center: { lat: 35.323432850189725, lng: 139.625426530838 },
+      zoom: 17,
+      mapId: "67c4afba5d5d2642",
+      mapTypeControl: false
+    }
+
+    const map = new Map(mapElement, mapOptions)
+
+    const currentPlaceId = ref("")
+    const currentMarkerElement = ref(new AdvancedMarkerElement())
+    const currentInfoWindow = ref(new InfoWindow())
+
+    map.addListener("click", async (event: google.maps.MapMouseEvent) => {
+      if ("placeId" in event) {
+        event.stop()
+
+        if ((event.placeId as string) !== currentPlaceId.value) {
+          currentPlaceId.value = ""
+          currentMarkerElement.value.map = null
+          currentInfoWindow.value.close()
+
+          const place = new Place({
+            id: event.placeId as string
+          })
+          await place.fetchFields({
+            fields: ["displayName", "googleMapsURI", "location"]
+          })
+          currentPlaceId.value = place.id
+
+          const markerElement = new AdvancedMarkerElement({
+            map: map,
+            position: place.location ?? null
+          })
+          currentMarkerElement.value = markerElement
+
+          const contentElement = document.createElement("div")
+          contentElement.innerHTML =
+            /* HTML */
+            `
+              <div class="card card-compact max-w-96 bg-base-300">
+                <div class="card-body">
+                  <h2 class="card-title">${place.displayName}</h2>
+                  <span>まだ情報が登録されていません。</span>
+                  <div class="card-actions justify-end">
+                    <button
+                      class="btn btn-primary btn-xs"
+                      onclick="add_place_information.showModal()"
+                    >
+                      登録
+                    </button>
+                    <a
+                      href="${place.googleMapsURI}"
+                      target="_blank"
+                      class="btn btn-primary btn-xs"
+                    >
+                      Googleマップ
+                    </a>
+                  </div>
+                </div>
+              </div>
+            `
+
+          const infoWindow = new InfoWindow({
+            content: contentElement,
+            position: event.latLng
+          })
+          infoWindow.open({
+            map: map,
+            anchor: markerElement
+          })
+          currentInfoWindow.value = infoWindow
+        } else {
+          currentInfoWindow.value.open({
+            map: map,
+            anchor: currentMarkerElement.value
+          })
+        }
+      } else {
+        currentPlaceId.value = ""
+        currentMarkerElement.value.map = null
+        currentInfoWindow.value.close()
+      }
     })
   })
 </script>

@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   spaLoadingTemplate: true,
+  runtimeConfig: {
+    public: {
+      googleMapApiKey: ""
+    }
+  },
   app: {
     head: {
       title: "石上ヒルズ",
@@ -20,13 +25,34 @@ export default defineNuxtConfig({
           content: "アジカンの非公式ファンサイト。"
         },
         {
+          property: "og:site_name",
+          content: "石上ヒルズ"
+        },
+        {
           property: "og:image",
           content:
             "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
         },
         {
+          name: "twitter:title",
+          content: "石上ヒルズ"
+        },
+        {
+          name: "twitter:description",
+          content: "アジカンの非公式ファンサイト。"
+        },
+        {
+          name: "twitter:creator",
+          content: "@zen96k"
+        },
+        {
+          name: "twitter:image",
+          content:
+            "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png"
+        },
+        {
           name: "twitter:card",
-          content: "summary_large_image"
+          content: "summary"
         }
       ]
     }
@@ -38,10 +64,5 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  modules: ["@nuxt/eslint"],
-  runtimeConfig: {
-    public: {
-      googleMapApiKey: ""
-    }
-  }
+  modules: ["@nuxt/eslint", "@vueuse/nuxt"]
 })

@@ -1,9 +1,10 @@
 <template>
   <div>
     <StrollMapGoogleMap />
+    <StrollMapGoogleMapInteraction />
   </div>
 </template>
 
 <script setup lang="ts">
-  useHead({ title: "お散歩マップ" })
+  useHeadSafe({ title: "お散歩マップ" })
 </script>

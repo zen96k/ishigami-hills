@@ -134,6 +134,7 @@
                     to="/experiment/stroll-map"
                   >
                     <span>お散歩マップ</span>
+                    <span class="badge badge-info">実装中</span>
                   </NuxtLink>
                 </li>
               </ul>
@@ -148,6 +149,8 @@
 <script setup lang="ts">
   const route = useRoute()
 
+  const { height: windowHeight } = useWindowSize()
+
   const menuIDs = [
     "/radar/official-site",
     "/radar/official-sns",
@@ -157,38 +160,26 @@
 
   const toggleMenuActiveState = () => {
     for (const id of menuIDs) {
-      const menuElement = document.getElementById(id)
-      if (menuElement !== null) {
-        if (route.path.includes(id)) {
-          menuElement.classList.add("active")
-        } else {
-          menuElement.classList.remove("active")
-        }
+      const menuElement = document.getElementById(id) as HTMLElement
+      if (route.path.includes(id)) {
+        menuElement.classList.add("active")
+      } else {
+        menuElement.classList.remove("active")
       }
     }
   }
+
+  watch(windowHeight, () => {
+    resizeAppContentsElementHeight()
+  })
 
   watch(route, () => {
     toggleMenuActiveState()
   })
 
   onMounted(() => {
+    resizeAppContentsElementHeight()
+
     toggleMenuActiveState()
-
-    const appHeaderElement = document.getElementById(
-      "app-header"
-    ) as HTMLDivElement
-    const appFooterElement = document.getElementById(
-      "app-footer"
-    ) as HTMLDivElement
-    const appContentsElement = document.getElementById(
-      "app-contents"
-    ) as HTMLDivElement
-
-    appContentsElement.style.minHeight =
-      window.innerHeight -
-      appHeaderElement.offsetHeight -
-      appFooterElement.offsetHeight +
-      "px"
   })
 </script>

@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-  useHead({
+  useHeadSafe({
     titleTemplate: (title) => {
       const route = useRoute()
       const appName = "石上ヒルズ"
