@@ -82,7 +82,7 @@
           contentElement.innerHTML =
             /* HTML */
             `
-              <div class="card max-w-96 bg-base-100">
+              <div class="card card-compact max-w-96 bg-base-100">
                 <div class="card-body">
                   <h2 class="card-title">${place.displayName}</h2>
                   <span>まだ情報が登録されていません。</span>
