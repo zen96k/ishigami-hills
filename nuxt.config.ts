@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   spaLoadingTemplate: true,
+  runtimeConfig: {
+    public: {
+      googleMapApiKey: ""
+    }
+  },
   app: {
     head: {
       title: "石上ヒルズ",
@@ -59,10 +64,5 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  modules: ["@nuxt/eslint"],
-  runtimeConfig: {
-    public: {
-      googleMapApiKey: ""
-    }
-  }
+  modules: ["@nuxt/eslint"]
 })
