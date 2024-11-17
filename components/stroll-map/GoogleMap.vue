@@ -73,12 +73,15 @@
           contentElement.innerHTML =
             /* HTML */
             `
-              <div class="card card-compact max-w-96 bg-base-100">
+              <div class="card card-compact max-w-96 bg-base-300">
                 <div class="card-body">
                   <h2 class="card-title">${place.displayName}</h2>
                   <span>まだ情報が登録されていません。</span>
                   <div class="card-actions justify-end">
-                    <button class="btn btn-disabled btn-primary btn-xs">
+                    <button
+                      class="btn btn-primary btn-xs"
+                      onclick="add_place_information.showModal()"
+                    >
                       登録
                     </button>
                     <a
@@ -97,10 +100,15 @@
             content: contentElement,
             position: event.latLng
           })
-          currentInfoWindow.value = infoWindow
           infoWindow.open({
             map: map,
             anchor: markerElement
+          })
+          currentInfoWindow.value = infoWindow
+        } else {
+          currentInfoWindow.value.open({
+            map: map,
+            anchor: currentMarkerElement.value
           })
         }
       } else {
