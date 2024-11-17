@@ -33,23 +33,14 @@
       appFooterElement.offsetHeight +
       "px"
 
-    const place = new Place({
-      id: "ChIJ-Yif-kRBGGAR0WQdmmLo688"
-    })
-    await place.fetchFields({
-      fields: ["location"]
-    })
-
     const mapOptions: google.maps.MapOptions = {
+      center: { lat: 35.323432850189725, lng: 139.625426530838 },
       zoom: 17,
       mapId: "67c4afba5d5d2642",
       mapTypeControl: false
     }
 
-    const map = new Map(mapElement, {
-      center: place.location ?? null,
-      ...mapOptions
-    })
+    const map = new Map(mapElement, mapOptions)
 
     const currentPlaceId = ref("")
     const currentMarkerElement = ref(new AdvancedMarkerElement())
