@@ -149,6 +149,8 @@
 <script setup lang="ts">
   const route = useRoute()
 
+  const { height: windowHeight } = useWindowSize()
+
   const menuIDs = [
     "/radar/official-site",
     "/radar/official-sns",
@@ -167,27 +169,17 @@
     }
   }
 
+  watch(windowHeight, () => {
+    resizeAppContentsElementHeight()
+  })
+
   watch(route, () => {
     toggleMenuActiveState()
   })
 
   onMounted(() => {
+    resizeAppContentsElementHeight()
+
     toggleMenuActiveState()
-
-    const appHeaderElement = document.getElementById(
-      "app-header"
-    ) as HTMLElement
-    const appFooterElement = document.getElementById(
-      "app-footer"
-    ) as HTMLElement
-    const appContentsElement = document.getElementById(
-      "app-contents"
-    ) as HTMLElement
-
-    appContentsElement.style.minHeight =
-      window.innerHeight -
-      appHeaderElement.offsetHeight -
-      appFooterElement.offsetHeight +
-      "px"
   })
 </script>

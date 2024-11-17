@@ -9,6 +9,12 @@
 
   const runtimeConfig = useRuntimeConfig()
 
+  const { height: windowHeight } = useWindowSize()
+
+  watch(windowHeight, () => {
+    resizeMapElementHeight()
+  })
+
   onMounted(async () => {
     const loader = new Loader({
       apiKey: runtimeConfig.public.googleMapApiKey,
@@ -19,19 +25,9 @@
     const { Map, InfoWindow } = await loader.importLibrary("maps")
     const { AdvancedMarkerElement } = await loader.importLibrary("marker")
 
-    const appHeaderElement = document.getElementById(
-      "app-header"
-    ) as HTMLElement
-    const appFooterElement = document.getElementById(
-      "app-footer"
-    ) as HTMLElement
     const mapElement = document.getElementById("map") as HTMLElement
 
-    mapElement.style.height =
-      window.innerHeight -
-      appHeaderElement.offsetHeight -
-      appFooterElement.offsetHeight +
-      "px"
+    resizeMapElementHeight()
 
     const mapOptions: google.maps.MapOptions = {
       center: { lat: 35.323432850189725, lng: 139.625426530838 },
