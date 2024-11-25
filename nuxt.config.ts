@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   spaLoadingTemplate: true,
   runtimeConfig: {
     public: {
-      googleMapApiKey: ""
+      googleMapApiKey: "",
+      appwriteProjectId: "",
+      appwriteApiEndpoint: "",
+      appwriteProjectDatabaseId: "",
+      appwriteStrollMapPlaceInformationCollectionId: ""
     }
   },
   app: {

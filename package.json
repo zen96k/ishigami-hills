@@ -24,6 +24,7 @@
     "@types/google.maps": "3.58.1",
     "@vueuse/core": "11.2.0",
     "@vueuse/nuxt": "11.2.0",
+    "appwrite": "16.0.2",
     "autoprefixer": "10.4.20",
     "daisyui": "4.12.10",
     "postcss": "8.4.47",
@@ -31,6 +32,7 @@
     "prettier-plugin-organize-imports": "4.1.0",
     "prettier-plugin-tailwindcss": "0.6.8",
     "tailwindcss": "3.4.12",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "zod": "3.23.8"
   }
 }
