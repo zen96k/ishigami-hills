@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   spaLoadingTemplate: true,
   runtimeConfig: {
     public: {
-      googleMapApiKey: ""
+      googleMapApiKey: "",
+      appwriteProjectId: "",
+      appwriteApiEndpoint: "",
+      appwriteProjectDatabaseId: "",
+      appwriteStrollMapPlaceInformationCollectionId: ""
     }
   },
   app: {
@@ -64,5 +68,5 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  modules: ["@nuxt/eslint", "@vueuse/nuxt"]
+  modules: ["@nuxt/eslint", "@nuxt/icon", "@vueuse/nuxt"]
 })

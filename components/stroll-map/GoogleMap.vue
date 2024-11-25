@@ -7,6 +7,10 @@
 <script setup lang="ts">
   import { Loader } from "@googlemaps/js-api-loader"
 
+  const emit = defineEmits({
+    prepareAddPlaceInformation: null
+  })
+
   const runtimeConfig = useRuntimeConfig()
 
   const { height: windowHeight } = useWindowSize()
@@ -25,22 +29,22 @@
     const { Map, InfoWindow } = await loader.importLibrary("maps")
     const { AdvancedMarkerElement } = await loader.importLibrary("marker")
 
+    const currentPlaceId = ref("")
+    const currentMarkerElement = ref(new AdvancedMarkerElement())
+    const currentInfoWindow = ref(new InfoWindow())
+
     const mapElement = document.getElementById("map") as HTMLElement
 
-    resizeMapElementHeight()
-
     const mapOptions: google.maps.MapOptions = {
-      center: { lat: 35.323432850189725, lng: 139.625426530838 },
-      zoom: 17,
+      center: { lat: 35.3234243, lng: 139.6254322 },
       mapId: "67c4afba5d5d2642",
-      mapTypeControl: false
+      mapTypeControl: false,
+      zoom: 17
     }
 
     const map = new Map(mapElement, mapOptions)
 
-    const currentPlaceId = ref("")
-    const currentMarkerElement = ref(new AdvancedMarkerElement())
-    const currentInfoWindow = ref(new InfoWindow())
+    resizeMapElementHeight()
 
     map.addListener("click", async (event: google.maps.MapMouseEvent) => {
       if ("placeId" in event) {
@@ -58,6 +62,7 @@
             fields: ["displayName", "googleMapsURI", "location"]
           })
           currentPlaceId.value = place.id
+          emit("prepareAddPlaceInformation", place)
 
           const markerElement = new AdvancedMarkerElement({
             map: map,
@@ -83,7 +88,7 @@
                     <a
                       href="${place.googleMapsURI}"
                       target="_blank"
-                      class="btn btn-primary btn-xs"
+                      class="btn btn-success btn-xs"
                     >
                       Googleマップ
                     </a>

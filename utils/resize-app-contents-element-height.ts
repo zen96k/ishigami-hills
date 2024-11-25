@@ -1,4 +1,4 @@
-export default () => {
+export const resizeAppContentsElementHeight = () => {
   const appHeaderElement = document.getElementById("app-header") as HTMLElement
   const appFooterElement = document.getElementById("app-footer") as HTMLElement
   const appContentsElement = document.getElementById(
