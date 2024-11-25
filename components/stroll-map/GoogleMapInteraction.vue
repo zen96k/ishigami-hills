@@ -68,7 +68,7 @@
     >
       <div class="modal-box">
         <h3 class="text-2xl font-bold">情報を確認する</h3>
-        <span>下記の通り、情報を登録します。よろしいですか？</span>
+        <span>下記の通り、情報を登録します。</span>
         <table class="w-full border-separate border border-slate-500">
           <thead class="bg-red-950">
             <tr>
