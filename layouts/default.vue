@@ -1,7 +1,5 @@
 <template>
   <div>
-    <AppNavigationMenu>
-      <slot />
-    </AppNavigationMenu>
+    <AppNavigation></AppNavigation>
   </div>
 </template>

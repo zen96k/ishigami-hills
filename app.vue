@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Html
-      lang="ja"
-      data-theme="dark"
-    >
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
+    <Html lang="ja">
+      <Head />
+      <Body class="dark">
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </Body>
     </Html>
   </div>
 </template>
@@ -22,5 +22,11 @@
         return title === undefined ? appName : `${appName} - ${title}`
       }
     }
+  })
+
+  onMounted(() => {
+    useFlowbite(() => {
+      initFlowbite()
+    })
   })
 </script>
