@@ -12,24 +12,20 @@
 </template>
 
 <script setup lang="ts">
-  const title = ref("")
-
   useHead({
     titleTemplate: (titleChunk) => {
-      title.value = titleChunk ? `${titleChunk} - 石上ヒルズ` : "石上ヒルズ"
-      return title.value
+      return titleChunk ? `石上ヒルズ - ${titleChunk}` : "石上ヒルズ"
     }
   })
 
   useSeoMeta({
-    title: title.value,
-    ogTitle: title.value,
+    ogTitle: "石上ヒルズ",
     description: "アジカンの非公式ファンサイト",
     ogDescription: "アジカンの非公式ファンサイト",
     ogSiteName: "石上ヒルズ",
     ogImage:
       "https://cdn.prod.website-files.com/603c87adb15be3cb0b3ed9b5/670dcf30efc008ddd6d9027d_061-min.png",
-    twitterTitle: title.value,
+    twitterTitle: "石上ヒルズ",
     twitterDescription: "アジカンの非公式ファンサイト",
     twitterCreator: "@zen96k",
     twitterImage:
