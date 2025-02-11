@@ -29,11 +29,11 @@
         </div>
         <div class="navbar-end">
           <NuxtLink
-            class="btn btn-circle btn-outline"
+            class="btn btn-outline"
             to="https://github.com/zen96k/ishigami-hills"
             target="_blank"
           >
-            <Icon name="skill-icons:github-light" />
+            <Icon name="octicon:logo-github-24" />
           </NuxtLink>
         </div>
       </div>
