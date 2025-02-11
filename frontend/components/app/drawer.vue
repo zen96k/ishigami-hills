@@ -57,6 +57,7 @@
       />
       <ul class="menu min-h-full w-80 bg-base-300 p-4">
         <!-- Sidebar content here -->
+        <div class="divider">Menu</div>
         <li>
           <NuxtLink class="menu-active">Radar</NuxtLink>
         </li>
