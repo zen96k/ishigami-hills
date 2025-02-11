@@ -1,7 +1,5 @@
 <template>
   <div>
-    <ClientOnly>
-      <OfficialRssGeneralInformation />
-    </ClientOnly>
+    <OfficialRssGeneralInformation />
   </div>
 </template>
