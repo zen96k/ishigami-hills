@@ -9,7 +9,7 @@
         Refresh
       </button>
     </div>
-    <div class="divider">公式サイトの一般情報。</div>
+    <div class="divider">公式サイトの一般情報</div>
     <div class="overflow-x-auto rounded-box border">
       <table class="table table-zebra">
         <!-- head -->
