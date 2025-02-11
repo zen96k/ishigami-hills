@@ -1,5 +1,7 @@
 <template>
   <div>
-    <span>Official RSS</span>
+    <ClientOnly>
+      <OfficialRssGeneralInformation />
+    </ClientOnly>
   </div>
 </template>
