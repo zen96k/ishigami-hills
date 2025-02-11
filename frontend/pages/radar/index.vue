@@ -1,3 +1,11 @@
+<template>
+  <div>
+    <OfficialRssGeneralInformation />
+  </div>
+</template>
+
 <script setup lang="ts">
-  await navigateTo("/radar/official-rss")
+  useSeoMeta({
+    title: "Radar"
+  })
 </script>
