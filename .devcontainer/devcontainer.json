@@ -1,0 +1,34 @@
+{
+  "name": "nuxt-fullstack-boilerplate",
+  "image": "debian",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/python:1": { "installTools": false }
+  },
+  "runArgs": ["--env-file", ".devcontainer/devcontainer.env", "--rm"],
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "charliermarsh.ruff",
+        "tamasfe.even-better-toml",
+        "kennylong.kubernetes-yaml-formatter",
+        "DavidAnson.vscode-markdownlint",
+        "bierner.markdown-preview-github-styles",
+        "Vue.volar",
+        "Nuxtr.nuxtr-vscode",
+        "bradlc.vscode-tailwindcss",
+        "JeffersonLicet.snipped"
+      ]
+    }
+  },
+  "postStartCommand": "bash .devcontainer/post_start_command.sh"
+}
