@@ -1,6 +1,6 @@
-# Nuxt-Fullstack-Boilerplate
+# Ishigami-Hills
 
-Nuxt+FastAPIでWebアプリケーションを開発するための、テンプレートリポジトリ。
+Nuxt+FastAPIで開発する、アジカンの非公式ファンサイト。
 
 ## Commit Prefix
 
