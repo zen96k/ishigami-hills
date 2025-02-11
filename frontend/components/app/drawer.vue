@@ -22,9 +22,10 @@
         <div class="navbar-center">
           <NuxtLink
             to="/"
-            class="text-lg"
+            class="flex flex-col items-center"
           >
-            石上ヒルズ
+            <span class="text-xl">石上ヒルズ</span>
+            <span class="text-xs">アジカンの非公式ファンサイト</span>
           </NuxtLink>
         </div>
         <div class="navbar-end">
