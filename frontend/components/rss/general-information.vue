@@ -10,7 +10,10 @@
       </button>
     </div>
     <div class="divider">公式サイトの一般情報</div>
-    <div class="overflow-x-auto rounded-box border">
+    <div
+      v-if="status === 'success'"
+      class="overflow-x-auto rounded-box border"
+    >
       <table class="table table-zebra">
         <thead class="glass bg-red-950">
           <tr>
@@ -19,22 +22,12 @@
             <th>タイトル</th>
           </tr>
         </thead>
-        <tbody v-if="status === 'pending'">
-          <tr
-            v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-            :key="i"
-          >
-            <th class="skeleton" />
-            <td class="skeleton" />
-            <td class="skeleton" />
-          </tr>
-        </tbody>
-        <tbody v-else>
+        <tbody>
           <tr
             v-for="(item, index) in data.items"
             :key="index"
           >
-            <th>{{ index + 1 }}</th>
+            <td>{{ index + 1 }}</td>
             <td>
               {{
                 new Date(item.pubDate)
@@ -59,6 +52,17 @@
         </tbody>
       </table>
     </div>
+    <div v-else-if="status === 'error'">
+      <div class="text-error">エラーが発生しました。</div>
+      <div class="text-error">{{ error }}</div>
+    </div>
+    <div v-else-if="status === 'pending'">
+      <div class="mockup-window border">
+        <div class="grid h-96 place-content-center">
+          <span class="loading loading-md loading-spinner" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -72,15 +76,18 @@
   }
 
   watch(data, () => {
-    data.value.items.sort((a, b) => {
-      if (b.pubDate < a.pubDate) {
-        return -1
-      } else if (a.pubDate < b.pubDate) {
-        return 1
-      } else {
-        return 0
-      }
-    })
+    if (status.value === "success") {
+      data.value.items.sort((a, b) => {
+        if (b.pubDate < a.pubDate) {
+          return -1
+        } else if (a.pubDate < b.pubDate) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+    }
+
     console.log("Data:")
     console.dir(data.value)
   })
