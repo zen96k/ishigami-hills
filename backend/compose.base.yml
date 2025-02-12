@@ -5,12 +5,9 @@ services:
     restart: always
     networks:
       - ishigami-hills
-    ports:
-      - 8000:8000
     volumes:
       - ./volume/api/ishigami-hills:/ishigami-hills
       - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
-    command: bash script/run_dev_server.sh
     tty: true
     working_dir: /ishigami-hills
 

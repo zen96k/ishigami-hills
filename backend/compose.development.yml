@@ -1,0 +1,5 @@
+services:
+  fastapi:
+    ports:
+      - ${FAST_API_PORT}:${FAST_API_PORT}
+    command: bash script/run_development_server.sh
