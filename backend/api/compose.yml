@@ -13,9 +13,9 @@ services:
       - traefik.http.routers.ih-fastapi.service=ih-fastapi
       - traefik.http.services.ih-fastapi.loadbalancer.server.port=8000
     volumes:
-      - ./volume/api/ishigami-hills:/ishigami-hills
+      - ./volume/ishigami-hills:/ishigami-hills
       - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
-    command: uvicorn main:app --host 0.0.0.0
+    command: bash -c "pip3 install -r requirements.txt --break-system-packages && uvicorn main:app --host 0.0.0.0"
     tty: true
     working_dir: /ishigami-hills
 

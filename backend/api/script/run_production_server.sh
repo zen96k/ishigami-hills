@@ -2,5 +2,4 @@
 
 set -euxo pipefail
 
-docker system prune -af --volumes
 docker compose up -d --force-recreate
