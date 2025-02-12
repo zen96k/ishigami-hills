@@ -13,8 +13,10 @@ git config --global user.email ${GIT_USER_EMAIL}
 docker system prune -af --volumes
 
 cd ${FRONTEND_DIRNAME}
+rm -rf .nuxt .output node_modules
 npm install -g npm-check-updates
 npm install
 
 cd ${BACKEND_DIRNAME}/api
+rm -rf __pycache__
 pip3 install -r requirements.txt --break-system-packages
