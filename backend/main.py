@@ -1,13 +1,14 @@
+import requests
 from fastapi import FastAPI
 
 app = FastAPI()
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get(path="/rss/general-information")
+async def get_general_information():
+    api_endpoint_url = "https://api.rss2json.com/v1/api.json"
+    rss_url = "https://www.sonymusic.co.jp/xml/artInfoRSS.php?id=72000340"
 
+    response = requests.get(url=api_endpoint_url, params={"rss_url": rss_url})
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+    return response.json()
