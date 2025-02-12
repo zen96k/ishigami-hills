@@ -11,7 +11,7 @@ services:
       - traefik.http.routers.ih-fastapi.entrypoints=http
       - traefik.http.routers.ih-fastapi.rule=Host(`${FAST_API_HOST}`)
       - traefik.http.routers.ih-fastapi.service=ih-fastapi
-      - traefik.http.services.ih-fastapi.loadbalancer.server.port=8000
+      - traefik.http.services.ih-fastapi.loadbalancer.server.port=${FAST_API_PORT}
     volumes:
       - ./volume/ishigami-hills:/ishigami-hills
       - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
