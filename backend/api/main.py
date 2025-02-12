@@ -1,5 +1,5 @@
 import requests
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
@@ -11,4 +11,7 @@ async def get_general_information():
 
     response = requests.get(url=api_endpoint_url, params={"rss_url": rss_url})
 
-    return response.json()
+    if response.status_code == requests.codes.ok:
+        return response.json()
+    else:
+        raise HTTPException(status_code=response.status_code)
