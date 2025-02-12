@@ -1,6 +1,6 @@
 <template>
   <div>
-    <OfficialRssGeneralInformation />
+    <RssGeneralInformation />
   </div>
 </template>
 

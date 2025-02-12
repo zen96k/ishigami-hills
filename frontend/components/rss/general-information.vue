@@ -12,7 +12,6 @@
     <div class="divider">公式サイトの一般情報</div>
     <div class="overflow-x-auto rounded-box border">
       <table class="table table-zebra">
-        <!-- head -->
         <thead class="glass bg-red-950">
           <tr>
             <th>No.</th>
@@ -64,11 +63,8 @@
 </template>
 
 <script setup lang="ts">
-  const apiEndpointUrl = "https://api.rss2json.com/v1/api.json"
-  const rssUrl = "https://www.sonymusic.co.jp/xml/artInfoRSS.php?id=72000340"
-
   const { data, refresh, error, status } = await useLazyFetch(
-    `${apiEndpointUrl}?rss_url=${encodeURIComponent(rssUrl)}`
+    "/api/rss/general-information"
   )
 
   const refreshData = () => {
