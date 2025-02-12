@@ -2,4 +2,5 @@
 
 set -euxo pipefail
 
-uvicorn main:app --reload
+pip3 install -r requirements.txt --break-system-packages
+uvicorn main:app --host 0.0.0.0 --reload
