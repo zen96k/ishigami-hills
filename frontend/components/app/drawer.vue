@@ -59,7 +59,11 @@
         <!-- Sidebar content here -->
         <div class="divider">Menu</div>
         <li>
-          <NuxtLink class="menu-active">Radar</NuxtLink>
+          <NuxtLink
+            to="/radar"
+            class="menu-active"
+            >Radar</NuxtLink
+          >
         </li>
       </ul>
     </div>
