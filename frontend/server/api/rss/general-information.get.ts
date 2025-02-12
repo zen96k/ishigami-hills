@@ -1,3 +1,7 @@
-export default defineEventHandler(() => {
-  return $fetch("http://localhost:8000/rss/general-information")
+export default defineEventHandler(async (event) => {
+  const { apiRssGeneralInformationBaseUrl } = useRuntimeConfig(event)
+
+  return await $fetch(
+    `${apiRssGeneralInformationBaseUrl}/rss/general-information`
+  )
 })
