@@ -1,6 +1,10 @@
 services:
   fastapi:
+    image: python:3.13.2
+    container_name: ih-fastapi
+    restart: always
     networks:
+      - ishigami-hills
       - reverse-proxy-internal
     labels:
       - traefik.enable=true
@@ -8,8 +12,15 @@ services:
       - traefik.http.routers.ih-fastapi.rule=Host(`${FAST_API_HOST}`)
       - traefik.http.routers.ih-fastapi.service=ih-fastapi
       - traefik.http.services.ih-fastapi.loadbalancer.server.port=8000
-    command: bash script/run_production_server.sh
+    volumes:
+      - ./volume/api/ishigami-hills:/ishigami-hills
+      - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
+    command: uvicorn main:app --host 0.0.0.0
+    tty: true
+    working_dir: /ishigami-hills
 
 networks:
+  ishigami-hills:
+    name: ishigami-hills
   reverse-proxy-internal:
     external: true
