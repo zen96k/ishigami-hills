@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <span>一般情報</span>
       <button
-        class="btn btn-sm btn-outline"
+        class="btn btn-sm btn-outline hover:bg-red-950"
         @click="refreshData"
       >
         Refresh
