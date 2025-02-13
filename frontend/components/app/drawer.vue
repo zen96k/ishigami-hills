@@ -75,13 +75,20 @@
             </NuxtLink>
           </li>
           <div class="fixed right-4 bottom-4 left-4">
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-evenly">
               <NuxtLink
                 to="https://github.com/zen96k/ishigami-hills"
                 target="_blank"
                 class="btn btn-sm btn-outline hover:bg-red-950"
               >
-                View source on GitHub
+                GitHub
+              </NuxtLink>
+              <NuxtLink
+                to="https://x.com/zen96k"
+                target="_blank"
+                class="btn btn-sm btn-outline hover:bg-blue-950"
+              >
+                Twitter
               </NuxtLink>
             </div>
           </div>
