@@ -9,7 +9,12 @@
         Refresh
       </button>
     </div>
-    <div class="divider">公式サイトの一般情報</div>
+    <div class="divider">
+      <div class="flex items-center justify-center">
+        <div>公式サイトの一般情報</div>
+        <Icon name="ic:baseline-rss-feed" />
+      </div>
+    </div>
     <div
       v-if="status === 'success'"
       class="overflow-x-auto rounded-box border"
