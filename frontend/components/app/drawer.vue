@@ -9,13 +9,15 @@
       <div class="navbar w-full bg-red-950">
         <div class="navbar-start">
           <div class="flex-none lg:hidden">
-            <label
-              for="app-drawer"
-              aria-label="open sidebar"
-              class="btn btn-square btn-outline"
-            >
-              <Icon name="ic:baseline-menu" />
-            </label>
+            <div class="flex items-center justify-center">
+              <label
+                for="app-drawer"
+                aria-label="open sidebar"
+                class="btn btn-square btn-outline"
+              >
+                <Icon name="ic:baseline-menu" />
+              </label>
+            </div>
           </div>
         </div>
         <div class="navbar-center">
@@ -60,7 +62,7 @@
         aria-label="close sidebar"
         class="drawer-overlay"
       />
-      <ul class="menu min-h-full w-80 bg-base-300 p-4">
+      <ul class="menu min-h-dvh w-80 bg-base-300 p-4">
         <div class="divider">Menu</div>
         <li>
           <NuxtLink
