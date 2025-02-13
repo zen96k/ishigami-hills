@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex items-center justify-between">
-      <span>一般情報</span>
+      <div>一般情報</div>
       <button
         class="btn btn-sm btn-outline hover:bg-red-950"
         @click="refreshData"

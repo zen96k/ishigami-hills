@@ -29,8 +29,8 @@
               class="h-12 w-12"
             />
             <div class="flex flex-col items-center">
-              <span class="text-xl">石上ヒルズ</span>
-              <span class="text-xs">アジカンの非公式ファンサイト</span>
+              <div class="text-xl">石上ヒルズ</div>
+              <div class="text-xs">アジカンの非公式ファンサイト</div>
             </div>
           </NuxtLink>
         </div>
