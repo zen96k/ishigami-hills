@@ -40,7 +40,7 @@
           </div>
           <div class="navbar-end">
             <div class="flex-none">
-              <NuxtLink
+              <!-- <NuxtLink
                 class="btn flex btn-square items-center justify-center btn-outline"
                 to="https://github.com/zen96k/ishigami-hills"
                 target="_blank"
@@ -49,7 +49,7 @@
                   name="mdi:github"
                   size="2.5em"
                 />
-              </NuxtLink>
+              </NuxtLink> -->
             </div>
           </div>
         </div>
@@ -74,6 +74,15 @@
               <Icon name="ic:baseline-radar" />
             </NuxtLink>
           </li>
+          <div class="fixed bottom-4 left-4">
+            <NuxtLink
+              to="https://github.com/zen96k/ishigami-hills"
+              target="_blank"
+              class="btn btn-sm btn-outline hover:bg-red-950"
+            >
+              View source on GitHub
+            </NuxtLink>
+          </div>
         </ul>
       </div>
     </div>
