@@ -74,14 +74,16 @@
               <Icon name="ic:baseline-radar" />
             </NuxtLink>
           </li>
-          <div class="fixed bottom-4 left-4">
-            <NuxtLink
-              to="https://github.com/zen96k/ishigami-hills"
-              target="_blank"
-              class="btn btn-sm btn-outline hover:bg-red-950"
-            >
-              View source on GitHub
-            </NuxtLink>
+          <div class="fixed right-4 bottom-4 left-4">
+            <div class="flex items-center justify-center">
+              <NuxtLink
+                to="https://github.com/zen96k/ishigami-hills"
+                target="_blank"
+                class="btn btn-sm btn-outline hover:bg-red-950"
+              >
+                View source on GitHub
+              </NuxtLink>
+            </div>
           </div>
         </ul>
       </div>
