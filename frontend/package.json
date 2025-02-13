@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-frontend-boilerplate",
+  "name": "ishigami-hills",
   "type": "module",
   "scripts": {
     "build": "nuxt build",

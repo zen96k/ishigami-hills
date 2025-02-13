@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-fullstack-boilerplate",
+  "name": "ishigami-hills",
   "image": "debian",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
