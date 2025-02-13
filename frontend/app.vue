@@ -1,7 +1,20 @@
 <template>
   <div>
     <Html lang="ja">
-      <Head />
+      <Head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Body>
         <NuxtLayout>
           <NuxtPage />
@@ -33,3 +46,9 @@
     twitterCard: "summary"
   })
 </script>
+
+<style>
+  html {
+    font-family: "M PLUS 1 Code";
+  }
+</style>
