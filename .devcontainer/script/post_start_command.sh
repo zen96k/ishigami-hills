@@ -5,6 +5,9 @@ set -euxo pipefail
 FRONTEND_DIRNAME=$(pwd)/frontend
 BACKEND_DIRNAME=$(pwd)/backend
 
+rm -rf ${localWorkspaceFolder}/.vscode-server/extensions
+mkdir -p ${localWorkspaceFolder}/.vscode-server/extensions
+
 rm -rf ${HOME}/.gitconfig
 git config --global init.defaultBranch ${GIT_INIT_DEFAULT_BRANCH}
 git config --global user.name ${GIT_USER_NAME}
