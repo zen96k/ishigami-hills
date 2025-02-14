@@ -21,5 +21,6 @@ npm install -g npm-check-updates
 npm install
 
 cd ${BACKEND_DIRNAME}/api
-rm -rf __pycache__
+find . -type d -name "__pycache__" -exec rm -rf {} +
+find . -type f -name "*.pyc" -delete
 pip3 install -r requirements.txt --break-system-packages
