@@ -15,6 +15,6 @@ pre-commit:
     - "*.ts"
     - "*.vue"
   - run: ruff check {staged_files}
-    root: backend
+    root: backend/api
     glob:
     - "*.py"

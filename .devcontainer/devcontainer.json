@@ -12,13 +12,6 @@
   "containerEnv": {
     "TZ": "Asia/Tokyo"
   },
-  "mounts": [
-    {
-      "source": "${localWorkspaceFolder}/.vscode-server/extensions",
-      "target": "/root/.vscode-server/extensions",
-      "type": "bind"
-    }
-  ],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -31,6 +24,7 @@
         "tamasfe.even-better-toml",
         "kennylong.kubernetes-yaml-formatter",
         "DavidAnson.vscode-markdownlint",
+        "mads-hartmann.bash-ide-vscode",
         "bierner.markdown-preview-github-styles",
         "Vue.volar",
         "Nuxtr.nuxtr-vscode",
@@ -39,6 +33,6 @@
       ]
     }
   },
-  "postStartCommand": "localWorkspaceFolder=${localWorkspaceFolder} bash .devcontainer/script/post_start_command.sh",
+  "postStartCommand": "bash .devcontainer/script/post_start_command.sh",
   "waitFor": "postStartCommand"
 }
