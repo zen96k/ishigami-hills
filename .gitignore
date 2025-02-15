@@ -1,2 +1,5 @@
+# VSCode Server
+.vscode-server
+
 # Local env files
 *.env

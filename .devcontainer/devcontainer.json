@@ -11,6 +11,13 @@
   "containerEnv": {
     "TZ": "Asia/Tokyo"
   },
+  "mounts": [
+    {
+      "source": "${localWorkspaceFolder}/.vscode-server/extensions",
+      "target": "/root/.vscode-server/extensions",
+      "type": "bind"
+    }
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -31,5 +38,6 @@
       ]
     }
   },
-  "postStartCommand": "bash .devcontainer/post_start_command.sh"
+  "postStartCommand": "localWorkspaceFolder=${localWorkspaceFolder} bash .devcontainer/script/post_start_command.sh",
+  "waitFor": "postStartCommand"
 }

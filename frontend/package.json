@@ -3,10 +3,11 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --host --no-fork",
+    "dev": "npm run openapi-typescript && nuxt dev --host --no-fork",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "openapi-typescript": "openapi-typescript http://localhost:8000/openapi.json -o types/api.d.ts"
   },
   "dependencies": {
     "nuxt": "3.15.4",
@@ -20,6 +21,7 @@
     "daisyui": "5.0.0-beta.6",
     "eslint": "9.20.1",
     "eslint-config-prettier": "10.0.1",
+    "openapi-typescript": "7.6.1",
     "prettier": "3.5.1",
     "prettier-plugin-organize-imports": "4.1.0",
     "prettier-plugin-tailwindcss": "0.6.11",
