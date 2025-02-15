@@ -1,12 +1,12 @@
 pre-commit:
   jobs:
-  - run: eslint {staged_files}
+  - run: npx eslint {staged_files}
     root: frontend
     glob:
     - "*.mjs"
     - "*.ts"
     - "*.vue"
-  - run: prettier {staged_files} --check
+  - run: npx prettier {staged_files} --check
     root: frontend
     glob:
     - "*.css"
@@ -15,6 +15,10 @@ pre-commit:
     - "*.ts"
     - "*.vue"
   - run: ruff check {staged_files}
+    root: backend/api
+    glob:
+    - "*.py"
+  - run: isort {staged_files} --diff
     root: backend/api
     glob:
     - "*.py"
