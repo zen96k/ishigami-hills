@@ -2,7 +2,7 @@ import requests
 from fastapi import FastAPI, HTTPException
 from models.rss2json import rss
 
-app = FastAPI(title="石上ヒルズ")
+app = FastAPI(title="石上ヒルズ", description="アジカンの非公式ファンサイト")
 
 
 @app.get(
