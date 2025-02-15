@@ -15,12 +15,17 @@ git config --global user.email ${GIT_USER_EMAIL}
 
 docker system prune -af --volumes
 
+npm install -g npm-check-updates@latest
+
+rm -rf .git/hooks
+go install github.com/evilmartians/lefthook@latest
+lefthook install
+
 cd ${FRONTEND_DIRNAME}
 rm -rf .nuxt .output node_modules
-npm install -g npm-check-updates
 npm install
 
 cd ${BACKEND_DIRNAME}/api
 find . -type d -name "__pycache__" -exec rm -rf {} +
 find . -type f -name "*.pyc" -delete
-pip3 install -r requirements.txt --break-system-packages
+pip3 install --break-system-packages -r requirements.txt

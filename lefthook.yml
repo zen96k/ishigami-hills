@@ -1,0 +1,20 @@
+pre-commit:
+  jobs:
+  - run: eslint {staged_files}
+    root: frontend
+    glob:
+    - "*.mjs"
+    - "*.ts"
+    - "*.vue"
+  - run: prettier {staged_files} --check
+    root: frontend
+    glob:
+    - "*.css"
+    - "*.json"
+    - "*.mjs"
+    - "*.ts"
+    - "*.vue"
+  - run: ruff check {staged_files}
+    root: backend
+    glob:
+    - "*.py"
