@@ -29,7 +29,7 @@
         </thead>
         <tbody>
           <tr
-            v-for="(item, index) in data.items"
+            v-for="(item, index) in data?.items"
             :key="index"
           >
             <td>{{ index + 1 }}</td>
@@ -82,7 +82,7 @@
 
   watch(data, () => {
     if (status.value === "success") {
-      data.value.items.sort((a, b) => {
+      data.value?.items.sort((a, b) => {
         if (b.pubDate < a.pubDate) {
           return -1
         } else if (a.pubDate < b.pubDate) {
