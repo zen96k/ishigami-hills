@@ -28,4 +28,5 @@ npm install
 cd "${BACKEND_DIRNAME}"/api
 find . -type d -name "__pycache__" -exec rm -rf {} +
 find . -type f -name "*.pyc" -delete
+rm -rf .ruff_cache
 pip3 install --break-system-packages -r requirements.txt
