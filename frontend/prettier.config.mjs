@@ -10,7 +10,7 @@ const config = {
   vueIndentScriptAndStyle: true,
   singleAttributePerLine: true,
   plugins: ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
-  tailwindStylesheet: "./assets/css/main.css"
+  tailwindStylesheet: "./assets/css/tailwind.css"
 }
 
 export default config

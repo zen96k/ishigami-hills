@@ -5,16 +5,18 @@ export default defineNuxtConfig({
   runtimeConfig: {
     fastApiBaseUrl: ""
   },
-  modules: ["@nuxt/eslint", "@nuxtjs/tailwindcss", "shadcn-nuxt"],
-  shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
-    prefix: "",
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
-    componentDir: "./components/ui"
+  modules: ["@nuxt/eslint", "@primevue/nuxt-module"],
+  css: ["~/assets/css/tailwind.css"],
+  postcss: {
+    plugins: {
+      "postcss-import": {},
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  },
+  primevue: {
+    options: {
+      theme: "none"
+    }
   }
 })
