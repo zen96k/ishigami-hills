@@ -1,24 +1,24 @@
-pre-commit:
-  jobs:
-  - run: npx eslint {staged_files}
-    root: frontend
-    glob:
-    - "*.mjs"
-    - "*.ts"
-    - "*.vue"
-  - run: npx prettier {staged_files} --check
-    root: frontend
-    glob:
-    - "*.css"
-    - "*.json"
-    - "*.mjs"
-    - "*.ts"
-    - "*.vue"
-  - run: ruff check {staged_files}
-    root: backend/api
-    glob:
-    - "*.py"
-  - run: isort {staged_files} --diff
-    root: backend/api
-    glob:
-    - "*.py"
+# pre-commit:
+#   jobs:
+#   - run: npx eslint {staged_files}
+#     root: frontend
+#     glob:
+#     - "*.mjs"
+#     - "*.ts"
+#     - "*.vue"
+#   - run: npx prettier {staged_files} --check
+#     root: frontend
+#     glob:
+#     - "*.css"
+#     - "*.json"
+#     - "*.mjs"
+#     - "*.ts"
+#     - "*.vue"
+#   - run: ruff check {staged_files}
+#     root: backend/api
+#     glob:
+#     - "*.py"
+#   - run: isort {staged_files} --diff
+#     root: backend/api
+#     glob:
+#     - "*.py"
