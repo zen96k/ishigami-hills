@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite"
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
@@ -5,18 +7,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     fastApiBaseUrl: ""
   },
-  modules: ["@nuxt/eslint", "@primevue/nuxt-module"],
-  css: ["~/assets/css/tailwind.css"],
-  postcss: {
-    plugins: {
-      "postcss-import": {},
-      tailwindcss: {},
-      autoprefixer: {}
-    }
+  modules: ["@nuxt/eslint"],
+  vite: {
+    plugins: [tailwindcss()]
   },
-  primevue: {
-    options: {
-      theme: "none"
-    }
-  }
+  css: ["~/assets/css/tailwind.css"]
 })
