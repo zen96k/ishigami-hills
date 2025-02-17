@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     fastApiBaseUrl: ""
   },
-  modules: ["@nuxt/eslint"],
+  modules: ["@nuxt/eslint", "@nuxt/icon"],
   vite: {
     plugins: [tailwindcss()]
   },
