@@ -7,7 +7,10 @@
         class="drawer-toggle"
       />
       <div class="drawer-content flex flex-col">
-        <div class="navbar w-full bg-red-950">
+        <div
+          id="app-header"
+          class="navbar w-full bg-red-950"
+        >
           <div class="navbar-start">
             <div class="flex-none lg:hidden">
               <div class="flex items-center justify-center">
@@ -53,9 +56,42 @@
             </div>
           </div>
         </div>
-        <div class="m-4">
+        <div
+          id="app-content"
+          class="min-h-dvh p-4"
+        >
           <slot />
         </div>
+        <footer
+          id="app-footer"
+          class="footer bg-red-950 p-1"
+        >
+          <div class="flex w-full items-center justify-between">
+            <div>Developer: Kotaro Kuroda</div>
+            <div class="flex items-center justify-center">
+              <NuxtLink
+                class="flex items-center justify-center"
+                to="https://github.com/zen96k/ishigami-hills"
+                target="_blank"
+              >
+                <Icon
+                  name="mdi:github"
+                  size="2.5em"
+                />
+              </NuxtLink>
+              <NuxtLink
+                class="flex items-center justify-center"
+                to="https://x.com/zen96k"
+                target="_blank"
+              >
+                <Icon
+                  name="mdi:twitter"
+                  size="2.5em"
+                />
+              </NuxtLink>
+            </div>
+          </div>
+        </footer>
       </div>
       <div class="drawer-side">
         <label
@@ -74,26 +110,18 @@
               <Icon name="ic:baseline-radar" />
             </NuxtLink>
           </li>
-          <div class="fixed right-4 bottom-4 left-4">
-            <div class="flex items-center justify-evenly">
-              <NuxtLink
-                to="https://github.com/zen96k/ishigami-hills"
-                target="_blank"
-                class="btn btn-sm btn-outline hover:bg-red-950"
-              >
-                GitHub
-              </NuxtLink>
-              <NuxtLink
-                to="https://x.com/zen96k"
-                target="_blank"
-                class="btn btn-sm btn-outline hover:bg-blue-950"
-              >
-                Twitter
-              </NuxtLink>
-            </div>
-          </div>
         </ul>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+  onMounted(() => {
+    resizeAppContentElementMinHeight()
+
+    window.addEventListener("resize", () => {
+      resizeAppContentElementMinHeight()
+    })
+  })
+</script>
