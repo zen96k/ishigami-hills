@@ -48,7 +48,7 @@
               <NuxtLink
                 :to="item.link"
                 target="_blank"
-                class="underline"
+                class="link link-hover"
               >
                 {{ item.title }}
               </NuxtLink>
