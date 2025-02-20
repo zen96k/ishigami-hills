@@ -13,9 +13,29 @@ export interface paths {
         };
         /**
          * General Information
-         * @description 公式サイトのRSSを取得する。
+         * @description 公式サイトの一般情報を取得する。
          */
         get: operations["General_Information_rss_general_information_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/rss/gotch-note": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Gotch Note
+         * @description GotchのNoteを取得する。
+         */
+        get: operations["Gotch_Note_rss_gotch_note_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -84,6 +104,26 @@ export interface components {
 export type $defs = Record<string, never>;
 export interface operations {
     General_Information_rss_general_information_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RSS"];
+                };
+            };
+        };
+    };
+    Gotch_Note_rss_gotch_note_get: {
         parameters: {
             query?: never;
             header?: never;
