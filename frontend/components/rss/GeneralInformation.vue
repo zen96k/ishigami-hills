@@ -1,70 +1,74 @@
 <template>
   <div>
-    <div class="flex items-center justify-between">
-      <div>一般情報</div>
-      <button
-        class="btn btn-sm btn-outline hover:bg-red-950"
-        @click="refreshData"
-      >
-        Refresh
-      </button>
-    </div>
-    <div class="divider">
-      <div class="flex items-center justify-center">
-        <div>公式サイトの一般情報</div>
-        <Icon name="ic:baseline-rss-feed" />
-      </div>
-    </div>
-    <div
-      v-if="status === 'success'"
-      class="overflow-x-auto rounded-box border"
-    >
-      <table class="table table-zebra">
-        <thead class="glass bg-red-950">
-          <tr>
-            <th>No.</th>
-            <th>日付</th>
-            <th>タイトル</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="(item, index) in data?.items"
-            :key="index"
+    <div class="card-border card border-red-600">
+      <div class="card-body">
+        <div class="flex items-center justify-between">
+          <div>一般情報</div>
+          <button
+            class="btn btn-sm btn-outline hover:bg-red-950"
+            @click="refreshData"
           >
-            <td>{{ index + 1 }}</td>
-            <td>
-              {{
-                new Date(item.pubDate)
-                  .toLocaleDateString("ja-JP", {
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit"
-                  })
-                  .replaceAll("/", "-")
-              }}
-            </td>
-            <td>
-              <NuxtLink
-                :to="item.link"
-                target="_blank"
-                class="link link-hover"
+            Refresh
+          </button>
+        </div>
+        <div class="divider">
+          <div class="flex items-center justify-center">
+            <div>公式サイトの一般情報</div>
+            <Icon name="ic:baseline-rss-feed" />
+          </div>
+        </div>
+        <div
+          v-if="status === 'success'"
+          class="overflow-x-auto rounded-box border"
+        >
+          <table class="table table-zebra">
+            <thead class="glass bg-red-950">
+              <tr>
+                <th>No.</th>
+                <th>日付</th>
+                <th>タイトル</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="(item, index) in data?.items"
+                :key="index"
               >
-                {{ item.title }}
-              </NuxtLink>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div v-else-if="status === 'error'">
-      <div class="text-error">エラーが発生しました。</div>
-      <div class="text-error">{{ error }}</div>
-    </div>
-    <div v-else-if="status === 'pending'">
-      <div class="mockup-window border">
-        <div class="grid h-96 place-content-center">
-          <span class="loading loading-md loading-spinner" />
+                <td>{{ index + 1 }}</td>
+                <td>
+                  {{
+                    new Date(item.pubDate)
+                      .toLocaleDateString("ja-JP", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit"
+                      })
+                      .replaceAll("/", "-")
+                  }}
+                </td>
+                <td>
+                  <NuxtLink
+                    :to="item.link"
+                    target="_blank"
+                    class="link link-hover"
+                  >
+                    {{ item.title }}
+                  </NuxtLink>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div v-else-if="status === 'error'">
+          <div class="text-error">エラーが発生しました。</div>
+          <div class="text-error">{{ error }}</div>
+        </div>
+        <div v-else-if="status === 'pending'">
+          <div class="mockup-window border">
+            <div class="grid h-96 place-content-center">
+              <span class="loading loading-md loading-spinner" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
