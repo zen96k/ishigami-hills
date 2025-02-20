@@ -58,7 +58,7 @@
         </div>
         <div
           id="app-content"
-          class="min-h-dvh p-4"
+          class="min-h-dvh px-8 py-8 lg:px-16"
         >
           <slot />
         </div>

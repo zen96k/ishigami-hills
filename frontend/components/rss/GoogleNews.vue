@@ -3,7 +3,7 @@
     <div class="card-border card border-4 border-red-950">
       <div class="card-body">
         <div class="flex items-center justify-between">
-          <div>一般情報</div>
+          <div>Googleニュース</div>
           <button
             class="btn btn-sm btn-outline hover:bg-red-950"
             @click="refreshData"
@@ -13,7 +13,7 @@
         </div>
         <div class="divider">
           <div class="flex items-center justify-center">
-            <div>公式サイトの一般情報</div>
+            <div>アジカンのニュース</div>
             <Icon name="ic:baseline-rss-feed" />
           </div>
         </div>
@@ -77,7 +77,7 @@
 
 <script setup lang="ts">
   const { data, refresh, error, status } = await useLazyFetch(
-    "/api/rss/general-information"
+    "/api/rss/google-news"
   )
 
   const refreshData = () => {
