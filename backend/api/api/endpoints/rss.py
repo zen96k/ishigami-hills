@@ -8,7 +8,7 @@ api_router = APIRouter()
 @api_router.get(
     path="/rss/general-information",
     name="General Information",
-    description="公式サイトのRSSを取得する。",
+    description="公式サイトの一般情報を取得する。",
     tags=["RSS"],
     response_model=rss.RSS,
 )
