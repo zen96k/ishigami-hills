@@ -19,7 +19,7 @@
         </div>
         <div
           v-if="status === 'success'"
-          class="max-h-96 overflow-auto border"
+          class="max-h-[500px] overflow-auto border"
         >
           <table class="table table-zebra">
             <thead class="bg-red-950">
