@@ -4,6 +4,7 @@
       <RssGeneralInformation />
       <RssGotchNote />
       <RssAVMSNote />
+      <RssGoogleNews />
     </div>
   </div>
 </template>

@@ -60,3 +60,22 @@ async def get_avms_note():
         return response.json()
     else:
         raise HTTPException(status_code=response.status_code)
+
+
+@api_router.get(
+    path="/rss/google-news",
+    name="Google News",
+    description="アジカンのニュースを取得する。",
+    tags=["RSS"],
+    response_model=rss.RSS,
+)
+async def get_google_news():
+    api_endpoint_url = "https://api.rss2json.com/v1/api.json"
+    rss_url = "https://news.google.com/rss/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNRE42WjNFMEVnSnFZU2dBUAE?hl=ja&gl=JP&ceid=JP%3Aja"
+
+    response = requests.get(url=api_endpoint_url, params={"rss_url": rss_url})
+
+    if response.status_code == requests.codes.ok:
+        return response.json()
+    else:
+        raise HTTPException(status_code=response.status_code)
