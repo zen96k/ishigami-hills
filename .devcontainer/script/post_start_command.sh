@@ -14,10 +14,6 @@ docker system prune -af --volumes
 
 npm install -g npm-check-updates@latest
 
-rm -rf .git/hooks
-go install github.com/evilmartians/lefthook@latest
-lefthook install
-
 apt update && apt -y install shellcheck && apt -y autopurge
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
