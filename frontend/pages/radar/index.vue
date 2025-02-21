@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
       <RssGoogleNews />
       <RssGeneralInformation />
       <RssGotchNote />
