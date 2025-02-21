@@ -1,17 +1,17 @@
 services:
   fastapi:
     image: python:3.13.2
-    container_name: ih-fastapi
+    container_name: ishigami-hills-api
     restart: always
     networks:
       - ishigami-hills
       - reverse-proxy-internal
     labels:
       - traefik.enable=true
-      - traefik.http.routers.ih-fastapi.entrypoints=http
-      - traefik.http.routers.ih-fastapi.rule=Host(`${FAST_API_HOST}`)
-      - traefik.http.routers.ih-fastapi.service=ih-fastapi
-      - traefik.http.services.ih-fastapi.loadbalancer.server.port=${FAST_API_PORT}
+      - traefik.http.routers.ishigami-hills-api.entrypoints=http
+      - traefik.http.routers.ishigami-hills-api.rule=Host(`${FAST_API_HOST}`)
+      - traefik.http.routers.ishigami-hills-api.service=ishigami-hills-api
+      - traefik.http.services.ishigami-hills-api.loadbalancer.server.port=${FAST_API_PORT}
     volumes:
       - ./volume/ishigami-hills:/ishigami-hills
       - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
