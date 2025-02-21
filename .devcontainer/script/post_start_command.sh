@@ -18,7 +18,7 @@ apt update && apt -y install shellcheck && apt -y autopurge
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
 cd "${FRONTEND_DIRNAME}"
-rm -rf .nuxt .output node_modules
+rm -rf .nuxt .output dist node_modules
 npm install
 
 cd "${BACKEND_DIRNAME}"/api
