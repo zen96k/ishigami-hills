@@ -64,8 +64,8 @@
           <div class="text-error">{{ error }}</div>
         </div>
         <div v-else-if="status === 'pending'">
-          <div class="mockup-window border">
-            <div class="grid h-96 place-content-center">
+          <div class="mockup-window h-[500px] border">
+            <div class="grid place-content-center">
               <span class="loading loading-md loading-spinner" />
             </div>
           </div>
