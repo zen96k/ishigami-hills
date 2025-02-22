@@ -14,7 +14,7 @@
         <div class="divider">
           <div class="flex items-center justify-center">
             <div>アジカンのニュース</div>
-            <Icon name="ic:baseline-rss-feed" />
+            <Icon name="material-symbols:rss-feed" />
           </div>
         </div>
         <div
