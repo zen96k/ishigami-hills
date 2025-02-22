@@ -19,7 +19,7 @@
                   aria-label="open sidebar"
                   class="btn btn-square btn-outline"
                 >
-                  <Icon name="ic:baseline-menu" />
+                  <Icon name="material-symbols:menu" />
                 </label>
               </div>
             </div>
@@ -42,24 +42,10 @@
             </div>
           </div>
           <div class="navbar-end">
-            <div class="flex-none">
-              <!-- <NuxtLink
-                class="btn flex btn-square items-center justify-center btn-outline"
-                to="https://github.com/zen96k/ishigami-hills"
-                target="_blank"
-              >
-                <Icon
-                  name="mdi:github"
-                  size="2.5em"
-                />
-              </NuxtLink> -->
-            </div>
+            <div class="flex-none" />
           </div>
         </div>
-        <div
-          id="app-content"
-          class="min-h-dvh px-8 py-8 lg:px-16"
-        >
+        <div id="app-content">
           <slot />
         </div>
         <footer
@@ -103,11 +89,22 @@
           <div class="divider">Menu</div>
           <li>
             <NuxtLink
+              id="/radar"
               to="/radar"
-              class="menu-active flex items-center justify-between"
+              class="flex items-center justify-between"
             >
               <div>Radar</div>
-              <Icon name="ic:baseline-radar" />
+              <Icon name="material-symbols:radar" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              id="/stroll-map"
+              to="/stroll-map"
+              class="flex items-center justify-between"
+            >
+              <div>お散歩マップ</div>
+              <Icon name="material-symbols:map" />
             </NuxtLink>
           </li>
         </ul>
@@ -117,7 +114,27 @@
 </template>
 
 <script setup lang="ts">
+  const route = useRoute()
+
+  const menuIDs = ["/radar", "/stroll-map"]
+
+  const toggleMenuActiveState = () => {
+    for (const id of menuIDs) {
+      const menuElement = document.getElementById(id) as HTMLElement
+      if (route.path.includes(id)) {
+        menuElement.classList.add("menu-active")
+      } else {
+        menuElement.classList.remove("menu-active")
+      }
+    }
+  }
+
+  watch(route, () => {
+    toggleMenuActiveState()
+  })
+
   onMounted(() => {
+    toggleMenuActiveState()
     resizeAppContentElementMinHeight()
 
     window.addEventListener("resize", () => {
