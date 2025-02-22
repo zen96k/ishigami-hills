@@ -137,8 +137,6 @@
     toggleMenuActiveState()
     resizeAppContentElementMinHeight()
 
-    window.addEventListener("resize", () => {
-      resizeAppContentElementMinHeight()
-    })
+    window.addEventListener("resize", resizeAppContentElementMinHeight)
   })
 </script>
