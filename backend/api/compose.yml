@@ -5,7 +5,7 @@ services:
     restart: always
     networks:
       - ishigami-hills
-      - reverse-proxy-internal
+      - reverse-proxy
     labels:
       - traefik.enable=true
       - traefik.http.routers.ishigami-hills-api.entrypoints=http
@@ -22,5 +22,5 @@ services:
 networks:
   ishigami-hills:
     name: ishigami-hills
-  reverse-proxy-internal:
+  reverse-proxy:
     external: true
