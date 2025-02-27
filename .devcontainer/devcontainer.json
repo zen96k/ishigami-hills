@@ -1,6 +1,6 @@
 {
   "name": "ishigami-hills",
-  "image": "debian",
+  "image": "public.ecr.aws/docker/library/debian",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
