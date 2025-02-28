@@ -7,7 +7,7 @@
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/python:1": { "installTools": false }
+    "ghcr.io/devcontainers/features/python:1": {}
   },
   "runArgs": ["--env-file", ".devcontainer/devcontainer.env", "--rm"],
   "containerEnv": {
@@ -34,6 +34,7 @@
       ]
     }
   },
+  "onCreateCommand": "cp -rfv .zshrc ~",
   "postStartCommand": "bash .devcontainer/script/post_start_command.sh",
   "waitFor": "postStartCommand"
 }
