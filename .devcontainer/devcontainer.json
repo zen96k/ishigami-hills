@@ -35,7 +35,7 @@
       ]
     }
   },
-  "onCreateCommand": "cp -rfv .zshrc ~",
+  "onCreateCommand": "cp -rfv .zshrc ${HOME}",
   "postStartCommand": "bash .devcontainer/script/post_start_command.sh",
   "waitFor": "postStartCommand"
 }

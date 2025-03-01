@@ -2,8 +2,8 @@
 *.pyc
 __pycache__
 
-# Ruff cache
-.ruff_cache
+# .venv
+.venv
 
 # Local env files
 *.env
