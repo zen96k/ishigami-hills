@@ -13,7 +13,7 @@ services:
       - traefik.http.routers.ishigami-hills-api.service=ishigami-hills-api
       - traefik.http.services.ishigami-hills-api.loadbalancer.server.port=${FAST_API_PORT}
     volumes:
-      - ./volume/ishigami-hills:/ishigami-hills
+      - .:/ishigami-hills
       - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
     command: bash -c "cd /ishigami-hills && bash script/run_production_server.sh"
     tty: true
