@@ -1,5 +1,5 @@
 services:
-  fastapi:
+  api:
     image: python:3.13.2
     container_name: ishigami-hills-api
     restart: always
