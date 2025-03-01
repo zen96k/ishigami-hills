@@ -16,6 +16,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "Codeium.codeium",
         "eamodio.gitlens",
         "ms-azuretools.vscode-docker",
         "MS-CEINTL.vscode-language-pack-ja",
