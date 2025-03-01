@@ -15,7 +15,7 @@ docker system prune -af --volumes
 npm install -g npm-check-updates@latest
 pipx install uv
 
-apt update && apt -y install shellcheck && apt -y autopurge
+apt update && apt -y install shellcheck
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
 cd "${FRONTEND_DIRNAME}"
