@@ -77,7 +77,8 @@
 
 <script setup lang="ts">
   const { data, refresh, error, status } = await useLazyFetch(
-    "/api/rss/google-news"
+    "/api/rss/google-news",
+    { timeout: 3000 }
   )
 
   const refreshData = () => {
