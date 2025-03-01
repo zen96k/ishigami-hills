@@ -76,8 +76,10 @@
 </template>
 
 <script setup lang="ts">
-  const { data, refresh, error, status } =
-    await useLazyFetch("/api/rss/avms-note")
+  const { data, refresh, error, status } = await useLazyFetch(
+    "/api/rss/avms-note",
+    { timeout: 3000 }
+  )
 
   const refreshData = () => {
     refresh()

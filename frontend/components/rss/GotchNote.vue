@@ -77,7 +77,8 @@
 
 <script setup lang="ts">
   const { data, refresh, error, status } = await useLazyFetch(
-    "/api/rss/gotch-note"
+    "/api/rss/gotch-note",
+    { timeout: 3000 }
   )
 
   const refreshData = () => {

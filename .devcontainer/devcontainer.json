@@ -9,13 +9,14 @@
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": {}
   },
-  "runArgs": ["--env-file", ".devcontainer/devcontainer.env", "--rm"],
+  "runArgs": ["--env-file", ".devcontainer/.env", "--rm"],
   "containerEnv": {
     "TZ": "Asia/Tokyo"
   },
   "customizations": {
     "vscode": {
       "extensions": [
+        "Codeium.codeium",
         "eamodio.gitlens",
         "ms-azuretools.vscode-docker",
         "MS-CEINTL.vscode-language-pack-ja",
