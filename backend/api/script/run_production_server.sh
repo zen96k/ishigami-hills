@@ -4,6 +4,8 @@ set -euxo pipefail
 
 pip3 install uv
 
+find . -type d -name "__pycache__" -exec rm -rf {} +
+find . -type f -name "*.pyc" -delete
 rm -rf .venv
 uv sync
 
