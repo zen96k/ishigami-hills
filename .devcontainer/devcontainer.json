@@ -2,7 +2,6 @@
   "name": "ishigami-hills",
   "image": "public.ecr.aws/docker/library/debian",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
@@ -34,7 +33,6 @@
       ]
     }
   },
-  "onCreateCommand": "cp -rfv .zshrc ${HOME}",
   "postStartCommand": "bash .devcontainer/script/post_start_command.sh",
   "waitFor": "postStartCommand"
 }

@@ -2,13 +2,18 @@
 
 set -euxo pipefail
 
-FRONTEND_DIRNAME=$(pwd)/frontend
-BACKEND_DIRNAME=$(pwd)/backend
+FRONTEND_DIRNAME="$(pwd)"/frontend
+BACKEND_DIRNAME="$(pwd)"/backend
 
 rm -rf "${HOME}"/.gitconfig
 git config --global init.defaultBranch "${GIT_INIT_DEFAULT_BRANCH}"
 git config --global user.name "${GIT_USER_NAME}"
 git config --global user.email "${GIT_USER_EMAIL}"
+
+apt update && apt -y install zsh
+sh -c "$(curl -fsSL https://install.ohmyz.sh)" "" --unattended
+chsh -s "$(which zsh)"
+cp -rfv .zshrc "${HOME}"
 
 npm install -g npm-check-updates@latest
 pipx install uv
