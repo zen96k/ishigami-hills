@@ -2,8 +2,8 @@
 
 set -euxo pipefail
 
-FRONTEND_DIRNAME=$(pwd)/frontend
-BACKEND_DIRNAME=$(pwd)/backend
+FRONTEND_DIRNAME="$(pwd)"/frontend
+BACKEND_DIRNAME="$(pwd)"/backend
 
 cd "${BACKEND_DIRNAME}"/api
 source .venv/bin/activate
