@@ -1,13 +1,13 @@
 {
   "name": "ishigami-hills",
-  "image": "public.ecr.aws/docker/library/debian",
+  "image": "debian",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": {}
   },
-  "runArgs": ["--env-file", ".devcontainer/.env", "--rm"],
+  "runArgs": ["--env-file", ".devcontainer/devcontainer.env", "--rm"],
   "containerEnv": {
     "TZ": "Asia/Tokyo"
   },
