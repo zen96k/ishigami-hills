@@ -13,7 +13,7 @@ git config --global init.defaultBranch ${GIT_INIT_DEFAULT_BRANCH}
 git config --global user.name ${GIT_USER_NAME}
 git config --global user.email ${GIT_USER_EMAIL}
 
-npm install -g npm-check-updates
+npm install -g npm-check-updates hexo-cli
 
 # cd ${FRONTEND_DIRNAME}/web
 # rm -rf .output .data .nuxt .nitro .cache dist
