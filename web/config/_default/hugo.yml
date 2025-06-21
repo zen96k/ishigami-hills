@@ -1,0 +1,17 @@
+defaultContentLanguage: ja
+ennableEmoji: true
+enableGitInfo: true
+enableRobotsTXT: true
+frontmatter:
+  lastmod:
+    - :git
+hasCJKLanguage: true
+languageCode: ja
+outputs:
+  home:
+    - HTML
+    - JSON
+    - RSS
+theme: blowfish
+timeZone: Asia/Tokyo
+title: 石上ヒルズ
