@@ -2,8 +2,7 @@
 
 set -euxo pipefail
 
-# FRONTEND_DIRNAME=$(pwd)/frontend
-# BACKEND_DIRNAME=$(pwd)/backend
+PROJECT_ROOT_PATH=$(pwd)
 
 docker system prune -af --volumes
 docker compose up -d
@@ -15,16 +14,6 @@ git config --global user.email ${GIT_USER_EMAIL}
 
 npm install -g npm-check-updates hexo-cli
 
-# cd ${FRONTEND_DIRNAME}/web
+cd ${PROJECT_ROOT_PATH}/web
 # rm -rf .output .data .nuxt .nitro .cache dist
-# npm install
-
-# cd ${BACKEND_DIRNAME}/db
-# npm install
-# rm -rf .output
-# npm run generate
-
-# cd ${BACKEND_DIRNAME}/cron
-# npm install
-# rm -rf .output
-# ln -s ../db/.output .output
+npm install
