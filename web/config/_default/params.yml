@@ -8,6 +8,9 @@ article:
   showWordCount: false
   showZenMode: true
 defaultAppearance: dark
+defaultBackgroundImage: image/enoshima.jpg
+defaultFeaturedImage: https://blowfish.page/img/blowfish_logo_transparent.png
+defaultSocialImage: https://blowfish.page/img/blowfish_logo_transparent.png
 homepage:
   homepageImage: image/enoshima.jpg
   layout: hero
