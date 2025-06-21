@@ -4,10 +4,10 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/node:1": {}
+    "ghcr.io/devcontainers/features/hugo:1": {}
   },
   "runArgs": ["--env-file", ".devcontainer/devcontainer.env", "--rm"],
-//   "forwardPorts": [3000, 3306, 5555],
+  "forwardPorts": [1313],
   "containerEnv": { "TZ": "Asia/Tokyo" },
   "customizations": {
     "vscode": {
@@ -20,12 +20,7 @@
         "adpyke.codesnap",
         "bierner.markdown-preview-github-styles",
         "mutantdino.resourcemonitor",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "Vue.volar",
-        "Nuxtr.nuxtr-vscode",
-        "bradlc.vscode-tailwindcss",
-        "Prisma.prisma"
+        "esbenp.prettier-vscode"
       ]
     }
   },

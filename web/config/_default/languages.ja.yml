@@ -1,0 +1,12 @@
+params:
+  author:
+    bio: 後藤正文になる
+    headline: 後藤正文になる
+    image: image/zen96k.jpg
+    links:
+      - github: "https://github.com/zen96k"
+      - twitter: "https://twitter.com/zen96k"
+      - instagram: "https://instagram.com/zen96k"
+    name: Kotaro Kuroda
+  dateFormat: 2006-01-02
+  description: 後藤正文になる

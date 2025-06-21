@@ -1,0 +1,25 @@
+article:
+  sharingLinks: [bluesky, facebook, line, mastodon, reddit, twitter]
+  showBreadcrumbs: true
+  showDateUpdated: true
+  showReadingTime: false
+  showTableOfContents: true
+  showTaxonomies: true
+  showWordCount: false
+  showZenMode: true
+defaultAppearance: dark
+homepage:
+  homepageImage: image/enoshima.jpg
+  layout: hero
+  showMoreLink: true
+  showMoreLinkDest: /posts
+  showRecent: true
+list:
+  showBreadcrumbs: true
+  showTableOfContents: true
+taxonomy:
+  showBreadcrumbs: true
+  showTableOfContents: true
+term:
+  showBreadcrumbs: true
+  showTableOfContents: true
