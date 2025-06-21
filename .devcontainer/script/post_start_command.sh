@@ -13,4 +13,4 @@ git config --global user.name ${GIT_USER_NAME}
 git config --global user.email ${GIT_USER_EMAIL}
 
 cd ${PROJECT_ROOT_PATH}/web
-rm -rf public .hugo_build.lock
+rm -rf public resources .hugo_build.lock
