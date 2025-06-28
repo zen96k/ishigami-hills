@@ -5,7 +5,7 @@ set -euxo pipefail
 PROJECT_ROOT_PATH=$(pwd)
 
 docker system prune -af --volumes
-docker compose up -d
+# docker compose up -d
 
 rm -rf ${HOME}/.gitconfig
 git config --global init.defaultBranch ${GIT_INIT_DEFAULT_BRANCH}
