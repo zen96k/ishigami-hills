@@ -1,7 +1,6 @@
 article:
   sharingLinks: [bluesky, facebook, line, mastodon, reddit, twitter]
   showBreadcrumbs: true
-  showDateUpdated: true
   showReadingTime: false
   showTableOfContents: true
   showTaxonomies: true
