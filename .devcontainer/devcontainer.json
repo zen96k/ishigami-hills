@@ -13,7 +13,6 @@
     "vscode": {
       "extensions": [
         "Codeium.codeium",
-        "Continue.continue",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
         "MS-CEINTL.vscode-language-pack-ja",
