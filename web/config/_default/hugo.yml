@@ -3,7 +3,11 @@ ennableEmoji: true
 enableGitInfo: true
 enableRobotsTXT: true
 frontmatter:
+  date:
+    - :git
   lastmod:
+    - :git
+  publishDate:
     - :git
 hasCJKLanguage: true
 languageCode: ja
