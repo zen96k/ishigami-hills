@@ -15,6 +15,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
   "workbench.colorTheme": "GitHub Dark",
   "remote.autoForwardPorts": false,
   "security.workspace.trust.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
   "editor.tabSize": 2,
@@ -74,6 +75,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
 ```json:settings.json
 {
   "continue.telemetryEnabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
   "editor.tabSize": 2,
