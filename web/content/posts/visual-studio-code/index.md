@@ -53,6 +53,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
     "vscode": {
       "extensions": [
         "Codeium.codeium",
+        "Continue.continue",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
         "MS-CEINTL.vscode-language-pack-ja",
@@ -74,6 +75,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
 
 ```json:settings.json
 {
+  "continue.telemetryEnabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
