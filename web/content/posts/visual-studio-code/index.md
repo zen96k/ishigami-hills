@@ -13,6 +13,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
 ```json:settings.json
 {
   "workbench.colorTheme": "GitHub Dark",
+  "workbench.secondarySideBar.showLabels": false,
   "remote.autoForwardPorts": false,
   "security.workspace.trust.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -51,10 +52,10 @@ tags = ['Visual Studio Code', '開発コンテナ']
   "customizations": {
     "vscode": {
       "extensions": [
-        "Codeium.codeium",
         "Continue.continue",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
+        "GitHub.vscode-pull-request-github",
         "MS-CEINTL.vscode-language-pack-ja",
         "adpyke.codesnap",
         "bierner.markdown-preview-github-styles",
