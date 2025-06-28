@@ -2,9 +2,9 @@ name: Local Assistant
 version: 1.0.0
 schema: v1
 models:
-  - name: gemma3:4b
+  - name: gemma3
     provider: ollama
-    model: gemma3:4b
+    model: gemma3
     roles:
       - chat
       - embed
