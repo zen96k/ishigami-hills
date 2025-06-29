@@ -2,6 +2,16 @@ name: Local Assistant
 version: 1.0.0
 schema: v1
 models:
+  - name: gemma3n
+    provider: ollama
+    model: gemma3n
+    roles:
+      - chat
+      - embed
+      - rerank
+      - edit
+      - apply
+      - summarize
   - name: phi4-mini
     provider: ollama
     model: phi4-mini
