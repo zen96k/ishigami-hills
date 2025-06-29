@@ -12,16 +12,8 @@ models:
       - edit
       - apply
       - summarize
-  - name: phi4-mini
-    provider: ollama
-    model: phi4-mini
-    roles:
-      - chat
-      - embed
-      - rerank
-      - edit
-      - apply
-      - summarize
+    defaultCompletionOptions:
+      contextLength: 32768
 context:
   - provider: file
   - provider: code
@@ -41,3 +33,8 @@ context:
   - provider: debugger
   - provider: repo-map
   - provider: os
+rules:
+  - name: Language Rule
+    rule: Always speak Japanese
+  - name: Tone Rule
+    rule: Always talk in a casual and friendly manner
