@@ -14,9 +14,9 @@ models:
       - summarize
     defaultCompletionOptions:
       contextLength: 32768
-  - name: phi4-mini
+  - name: gemma3n-lite
     provider: ollama
-    model: phi4-mini
+    model: gemma3n
     roles:
       - chat
       - embed
@@ -24,10 +24,8 @@ models:
       - edit
       - apply
       - summarize
-    capabilities:
-      - tool_use
     defaultCompletionOptions:
-      contextLength: 32768
+      contextLength: 2048
 context:
   - provider: file
   - provider: code
