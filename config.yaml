@@ -36,3 +36,5 @@ context:
 rules:
   - name: Language Rule
     rule: Always speak Japanese
+  - name: Tone Rule
+    rule: Always talk in a casual and friendly manner
