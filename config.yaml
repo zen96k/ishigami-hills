@@ -14,18 +14,6 @@ models:
       - summarize
     defaultCompletionOptions:
       contextLength: 32768
-  - name: gemma3n-lite
-    provider: ollama
-    model: gemma3n
-    roles:
-      - chat
-      - embed
-      - rerank
-      - edit
-      - apply
-      - summarize
-    defaultCompletionOptions:
-      contextLength: 2048
 context:
   - provider: file
   - provider: code
