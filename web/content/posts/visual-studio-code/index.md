@@ -52,7 +52,6 @@ tags = ['Visual Studio Code', '開発コンテナ']
   "customizations": {
     "vscode": {
       "extensions": [
-        "Codeium.codeium",
         "Continue.continue",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
