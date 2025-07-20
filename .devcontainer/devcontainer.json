@@ -12,6 +12,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "Codeium.codeium",
         "Continue.continue",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
