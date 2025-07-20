@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-docker container exec -it ih-ollama ollama pull gemma3n
+docker container exec -it ollama ollama pull gemma3n
 cp -rfv config.yaml ${HOME}/.continue
 
 fastfetch

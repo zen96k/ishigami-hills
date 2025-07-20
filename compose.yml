@@ -1,7 +1,7 @@
 services:
   ollama:
     image: ollama/ollama
-    container_name: ih-ollama
+    container_name: ollama
     networks:
       - ishigami-hills
     ports:
