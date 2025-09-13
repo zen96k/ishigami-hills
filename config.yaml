@@ -1,10 +1,10 @@
-name: Local Assistant
+name: Local LLM
 version: 1.0.0
 schema: v1
 models:
-  - name: gemma3n
+  - name: gemma3
     provider: ollama
-    model: gemma3n
+    model: gemma3
     roles:
       - chat
       # - autocomplete
@@ -13,21 +13,13 @@ models:
       - edit
       - apply
       - summarize
-    defaultCompletionOptions:
-      contextLength: 32768
 context:
   - provider: file
   - provider: code
   - provider: diff
   - provider: currentFile
   - provider: terminal
-  - provider: docs
   - provider: open
-  - provider: web
-  - provider: codebase
-  - provider: folder
-  - provider: search
-  - provider: url
   - provider: clipboard
   - provider: tree
   - provider: problems
@@ -37,5 +29,3 @@ context:
 rules:
   - name: Language Rule
     rule: Always speak Japanese
-  - name: Tone Rule
-    rule: Always talk in a casual and friendly manner

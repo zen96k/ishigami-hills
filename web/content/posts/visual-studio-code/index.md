@@ -40,7 +40,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
 ```json:devcontainer.json
 {
   "name": "ishigami-hills",
-  "image": "debian",
+  "image": "ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/git:1": {},
@@ -52,6 +52,7 @@ tags = ['Visual Studio Code', '開発コンテナ']
   "customizations": {
     "vscode": {
       "extensions": [
+        "Codeium.codeium",
         "Continue.continue",
         "ms-azuretools.vscode-docker",
         "eamodio.gitlens",
