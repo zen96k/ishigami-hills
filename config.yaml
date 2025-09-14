@@ -2,9 +2,9 @@ name: Local LLM
 version: 1.0.0
 schema: v1
 models:
-  - name: gemma3
+  - name: deepseek-coder-v2
     provider: ollama
-    model: gemma3
+    model: deepseek-coder-v2
     roles:
       - chat
       # - autocomplete
