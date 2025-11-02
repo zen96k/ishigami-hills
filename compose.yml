@@ -1,15 +1,19 @@
 services:
   ollama:
     image: ollama/ollama
-    container_name: ollama
+    container_name: ih-ollama
+    init: true
     networks:
       - ishigami-hills
     ports:
       - 11434:11434
-    volumes:
-      - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
     environment:
       - TZ=Asia/Tokyo
+    volumes:
+      - ./volume/ollama/root/.ollama:/root/.ollama
+      - /usr/share/zoneinfo/Asia/Tokyo:/etc/localtime:ro
+    stdin_open: true
+    tty: true
 
 networks:
   ishigami-hills:
