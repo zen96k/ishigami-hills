@@ -32,8 +32,6 @@ tags = ['Visual Studio Code', '開発コンテナ']
 }
 ```
 
-## 開発コンテナ
-
 ### devcontainer.json
 
 ```json:devcontainer.json
