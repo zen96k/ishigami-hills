@@ -2,15 +2,21 @@
 
 set -euxo pipefail
 
-PROJECT_ROOT_PATH=$(pwd)
+export DEBIAN_FRONTEND=noninteractive
 
-docker system prune -af --volumes
-docker compose up -d
+SCRIPT_DIRNAME=$(cd $(dirname ${0}) && pwd)
+PROJECT_DIRNAME=$(cd ${SCRIPT_DIRNAME}/../.. && pwd)
+
+HUGO_DIRNAME=${PROJECT_DIRNAME}/web
+
+cd ${PROJECT_DIRNAME}
 
 rm -rf ${HOME}/.gitconfig
 git config --global init.defaultBranch ${GIT_INIT_DEFAULT_BRANCH}
 git config --global user.name ${GIT_USER_NAME}
 git config --global user.email ${GIT_USER_EMAIL}
 
-cd ${PROJECT_ROOT_PATH}/web
+docker compose up -d --pull always --force-recreate -V
+
+cd ${HUGO_DIRNAME}
 rm -rf public resources .hugo_build.lock
